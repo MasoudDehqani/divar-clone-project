@@ -9,6 +9,10 @@ import People from "@material-ui/icons/People"
 import Work from "@material-ui/icons/WorkOutline"
 import Business from "@material-ui/icons/BusinessCenter"
 
+// const allRoutes = {
+  
+// }
+
 enum TopLevelPersianTexts {
   "real-estate" = "املاک",
   "vehicles" = "وسایل نقلیه",
@@ -1061,36 +1065,3 @@ export const level3SubCategories = [
     subcategories: []
   },
 ]
-
-
-      {/* <List>
-          <ListItem>
-            <SideItem linkToGo={`${'real-estate'}`} Icon={HouseOutlined} text="املاک" />
-          </ListItem>
-          <ListItem>
-            <SideItem linkToGo={`${'vehicles'}`} Icon={Car} text="وسایل نقلیه" />
-          </ListItem>
-          <ListItem>
-            <SideItem linkToGo={`${'electronic-devices'}`} Icon={SmartPhone} text="لوازم الکترونیکی" />
-          </ListItem>
-          <ListItem>
-            <SideItem linkToGo={`${'home-and-kitchen'}`} Icon={Furniture} text="مربوط به خانه" />
-          </ListItem>
-          <ListItem>
-            <SideItem linkToGo={`${'services'}`} Icon={Build} text="خدمات" />
-          </ListItem>
-          <ListItem>
-            <SideItem linkToGo={`${'personal-goods'}`} Icon={Watch} text="وسایل شخصی" />
-          </ListItem>
-          <ListItem>
-            <SideItem linkToGo={`${'entertainment'}`} Icon={Dice} text="سرگرمی و فراغت" />
-          </ListItem>
-          <ListItem>
-            <SideItem linkToGo={`${'social-services'}`} Icon={People} text="اجتماعی" />
-          </ListItem>
-          <ListItem>
-            <SideItem linkToGo={`${'businesses'}`} Icon={Work} text="برای کسب و کار" />
-          </ListItem>
-          <ListItem>
-            <SideItem linkToGo={`${'jobs'}`} Icon={Business} text="استخدام و کاریابی" />
-          </ListItem> */}

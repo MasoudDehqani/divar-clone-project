@@ -10,15 +10,13 @@ const TopLevelSidebar = () => {
 
   const context = useContext(DivarContext)
   const param = useParams()
+  console.log(context.routes)
 
   return (
     <List>
       {topLevelRoutesTitlesIcons.map( ({ route, text, icon }) => 
         <SideItem 
-          onClick={() => {
-            context.routes.topLevel = route
-            context.routes.level2 = ''
-          }} 
+          onClick={() => context.setRoutes({ topLevel: route, level2: "", level3: "" })} 
           linkToGo={`/tehran/${route}`} 
           Icon={icon} 
           text={text} 
