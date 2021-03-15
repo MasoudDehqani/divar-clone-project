@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
-import Navbar from './components/Navbar/Navbar'
+import Divar from './components/Divar/Divar'
+import DivarContextProvider from "./components/context/divarContext"
 
 function App() {
   return (
-    <Navbar />
+    <DivarContextProvider>
+      <Divar />
+    </DivarContextProvider>
   )
 }
 
