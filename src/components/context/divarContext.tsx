@@ -17,7 +17,8 @@ const DivarContextProvider = ({ children } : { children: React.ReactChild }) => 
 
   // const match = useRouteMatch()
   // const history = useHistory()
-  const location = useLocation()
+  const { pathname } = useLocation()
+  console.log(pathname)
 
   const [data, setData] = useState([])
   // const [url, setUrl] = useState("/tehran")
@@ -26,6 +27,7 @@ const DivarContextProvider = ({ children } : { children: React.ReactChild }) => 
   console.log(data)
 
   const getSetData = async (route = "/tehran") => {
+    if (route === "/") return
     const response = await ((await fetch(`https://api.divar.ir/v8/web-search${route}`)).json())
     const levels: string[] = []
   
@@ -38,10 +40,10 @@ const DivarContextProvider = ({ children } : { children: React.ReactChild }) => 
     routes.level3 = levels[2] ? levels[2] : "";
     setData(response)
   }
-
+ 
   useEffect( () => {
-    getSetData(location.pathname)
-  }, [location])
+    getSetData(pathname)
+  }, [pathname])
   
   return <DivarContext.Provider value={{data, getSetData, routes }}>{children}</DivarContext.Provider>
 }
