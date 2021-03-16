@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { List, ListItem, Link } from "@material-ui/core"
-import { Switch, NavLink, useParams, Route } from "react-router-dom"
+import { Switch, NavLink, useParams, Route, useRouteMatch } from "react-router-dom"
 import SideItem from './SideItem'
 import { DivarContext } from "../context/divarContext"
 import { topLevelRoutesTitlesIcons } from "./dataStructured"
@@ -9,14 +9,26 @@ import Level2Sidebar from './Level2Sidebar'
 const TopLevelSidebar = () => {
 
   const context = useContext(DivarContext)
-  const param = useParams()
-  console.log(context.routes)
+
+  const { path, url } = useRouteMatch()
+
+  useEffect( () => {
+    context.getSetData(url)
+  }, [url])
+
+  context.routes.topLevel = "";
+  context.routes.level2 = "";
+  context.routes.level3 = "";
 
   return (
     <List>
       {topLevelRoutesTitlesIcons.map( ({ route, text, icon }) => 
         <SideItem 
-          onClick={() => context.setRoutes({ topLevel: route, level2: "", level3: "" })} 
+          onClick={() => {
+            context.routes.topLevel = route
+            context.routes.level2 = ""
+            context.routes.level3 = ""
+          }}
           linkToGo={`/tehran/${route}`} 
           Icon={icon} 
           text={text} 
