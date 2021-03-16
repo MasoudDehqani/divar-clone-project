@@ -1,36 +1,36 @@
 import React from 'react'
-import { AppBar, Toolbar, List, ListItem, Button, Box, Container, createMuiTheme, ThemeProvider, Popover, Paper } from "@material-ui/core"
+import { AppBar, Toolbar, List, ListItem, Button, Box, Container, Paper } from "@material-ui/core"
 import { LocationOnRounded } from "@material-ui/icons"
-import makeStyles from "@material-ui/core/styles/makeStyles"
+// import makeStyles from "@material-ui/core/styles/makeStyles"
 import image2 from  './images/Capture2.JPG';
 import Hidden from "@material-ui/core/Hidden"
 import MenuIcon from "@material-ui/icons/Menu"
-import Menu from "@material-ui/core/Menu"
+// import Menu from "@material-ui/core/Menu"
 import MenuItem from '@material-ui/core/MenuItem';
 import Link from "@material-ui/core/Link"
 import ClickAwayListener from '@material-ui/core/ClickAwayListener'
 
-const theme = createMuiTheme({
-  overrides: {
-    MuiPopover: {
-      paper: {
-        marginTop: '40px',
-        width: '180px'
-      }
-    }
-  }
-})
+// const theme = createMuiTheme({
+//   overrides: {
+//     MuiPopover: {
+//       paper: {
+//         marginTop: '40px',
+//         width: '180px'
+//       }
+//     }
+//   }
+// })
 
-const useStyles = makeStyles({
-  root: {
-    '& paper': {
-      color: 'white'
-    },
-    '&:hover': {
-      backgroundColor: "rgba(0,0,0,0.1)"
-    }
-  }
-})
+// const useStyles = makeStyles({
+//   root: {
+//     '& paper': {
+//       color: 'white'
+//     },
+//     '&:hover': {
+//       backgroundColor: "rgba(0,0,0,0.1)"
+//     }
+//   }
+// })
 
 function Header() {
 
@@ -44,7 +44,7 @@ function Header() {
   //   setAnchorEl(null);
   // };
 
-  const classes = useStyles()
+  // const classes = useStyles()
 
   return (
     <Container>

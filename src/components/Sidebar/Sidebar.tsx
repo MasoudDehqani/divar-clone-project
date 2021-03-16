@@ -1,13 +1,13 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Switch, NavLink, Redirect, useRouteMatch } from "react-router-dom"
+import { Route, Switch, Redirect } from "react-router-dom"
 import TopLevelSidebar from './TopLevelSidebar'
 import Level2Sidebar from "./Level2Sidebar"
 
 
 const Sidebar = () => {
+  // console.log("Sidebar")
   return (
     <div style={{width: '400px', marginTop: "100px", position: "sticky", padding: "0 25px"}}>
-      <Router>
 
         <h3>دسته بندی‌ها</h3>
 
@@ -28,7 +28,6 @@ const Sidebar = () => {
           <Route path="/businesses" component={Level2Sidebar} />
           <Route path="/jobs" component={Level2Sidebar} /> */}
         </Switch>
-      </Router>
     </div>
   )
 }
