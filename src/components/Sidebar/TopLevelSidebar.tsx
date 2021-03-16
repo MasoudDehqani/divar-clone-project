@@ -11,14 +11,20 @@ const TopLevelSidebar = () => {
   const context = useContext(DivarContext)
 
   const { path, url } = useRouteMatch()
+  context.setUrl(url)
+  console.log('toplevel rendered')
+  // console.log(url)
+  // console.log(context.url)
 
-  useEffect( () => {
-    context.getSetData(url)
-  }, [url])
+  // useEffect( () => {
+  //   context.getSetData(url)
+  // }, [url])
 
-  context.routes.topLevel = "";
-  context.routes.level2 = "";
-  context.routes.level3 = "";
+  // console.log(context.data)
+
+  // context.routes.topLevel = "";
+  // context.routes.level2 = "";
+  // context.routes.level3 = "";
 
   return (
     <List>

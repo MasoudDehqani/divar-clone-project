@@ -2,7 +2,6 @@ import React from 'react'
 import { AppBar, Toolbar, List, ListItem, Button, Box, Container, createMuiTheme, ThemeProvider, Popover, Paper } from "@material-ui/core"
 import { LocationOnRounded } from "@material-ui/icons"
 import makeStyles from "@material-ui/core/styles/makeStyles"
-//@ts-ignore
 import image2 from  './images/Capture2.JPG';
 import Hidden from "@material-ui/core/Hidden"
 import MenuIcon from "@material-ui/icons/Menu"

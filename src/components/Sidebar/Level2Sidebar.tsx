@@ -10,33 +10,38 @@ import { DivarContext } from '../context/divarContext'
 const Level2Sidebar = () => {
 
   const context = useContext(DivarContext)
-  console.log(context.data)
+  // console.log(context.data)
+  console.log("level2 rendered")
 
   const { path, url } = useRouteMatch()
-  console.log(url)
-  //@ts-ignore
-  console.log(context.data.seo_details?.bread_crumbs)
-  const levels: string[] = []
+  // context.url = url
+  context.setUrl(url)
+  // console.log(url)
+  // console.log(context.url)
+  // console.log(context.routes)
+  // //@ts-ignore
+  // console.log(context.data.seo_details?.bread_crumbs)
+  // const levels: string[] = []
   
-  //@ts-ignore
-  context.data.seo_details?.bread_crumbs.forEach( item => {
-    item.url.includes("/") && levels.unshift(item.url.substr(7))
-  })
-  console.log(levels)
+  // //@ts-ignore
+  // context.data.seo_details?.bread_crumbs.forEach( item => {
+  //   item.url.includes("/") && levels.unshift(item.url.substr(7))
+  // })
+  // console.log(levels)
 
   // const callback = useCallback( () => {
   //   context.setRoutes({topLevel: levels[2] ? levels[2] : "", level2: levels[1] ? levels[1] : "", level3: levels[0] ? levels[0] : ""})
   // }, [url])
 
-  context.routes.topLevel = levels[0] ? levels[0] : "";
-  context.routes.level2 = levels[1] ? levels[1] : "";
-  context.routes.level3 = levels[2] ? levels[2] : "";
+  // context.routes.topLevel = levels[0] ? levels[0] : "";
+  // context.routes.level2 = levels[1] ? levels[1] : "";
+  // context.routes.level3 = levels[2] ? levels[2] : "";
 
-  console.log(context.routes)
+  // console.log(context.routes)
   
-  useEffect( () => {
-    context.getSetData(url)
-  }, [url])
+  // useEffect( () => {
+  //   context.getSetData(url)
+  // }, [url])
   
 
   return (
