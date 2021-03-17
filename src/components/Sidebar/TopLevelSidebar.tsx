@@ -22,6 +22,7 @@ const TopLevelSidebar = () => {
           return (
             // <List key={text}>
             <>
+            
               <ReturnToAll />
 
               <SideItem
@@ -33,12 +34,11 @@ const TopLevelSidebar = () => {
                 linkToGo={`/tehran/${route}`}
                 text={text}
                 Icon={icon}
-                style={{
-                  color: context.routes.topLevel === route ? "black" : "",
-                }}
+                style={{ color: context.routes.topLevel === route ? "black" : "" }}
               />
 
               <Level2Sidebar subCategories={subCategories} />
+
             </>
           );
         }
@@ -64,32 +64,3 @@ const TopLevelSidebar = () => {
 };
 
 export default TopLevelSidebar;
-
-// if (context.routes.topLevel === route) {
-//   return (
-//     <List key={text}>
-//       <SideItem
-//         onClick={() => {
-//           context.routes.topLevel = route
-//           context.routes.level2 = ""
-//           context.routes.level3 = ""
-//         }}
-//         linkToGo={`/tehran/${route}`}
-//         text={text}
-//         Icon={icon}
-//         style={{color: context.routes.topLevel === route ? "black" : ''}}
-//       />
-
-{
-  /* <SideItem
-          key={text} 
-          onClick={() => {
-            context.routes.topLevel = route
-            context.routes.level2 = ""
-            context.routes.level3 = ""
-          }}
-          linkToGo={`/tehran/${route}`} 
-          Icon={icon} 
-          text={text} 
-        /> */
-}

@@ -3,6 +3,7 @@ import { level3SubCategories } from "./dataStructured";
 import { DivarContext } from "../context/divarContext";
 import { Box, Link, ListItem } from "@material-ui/core";
 import { NavLink } from "react-router-dom";
+import SideItem from "./SideItem";
 
 const Level3Sidebar = () => {
   const context = useContext(DivarContext);
@@ -14,20 +15,12 @@ const Level3Sidebar = () => {
           return subcategories.map(({ subcategoryRoute, subcategoryText }) => {
             return (
               <Box mr={4} key={subcategoryText}>
-                <Link
-                  onClick={() => {
-                    context.routes.level3 = subcategoryRoute;
-                  }}
-                  underline="none"
-                  component={NavLink}
-                  to={`/tehran/${subcategoryRoute}`}
-                  activeStyle={{ color: "red" }}
-                  color="textSecondary"
-                >
-                  <ListItem>
-                    <span>{subcategoryText}</span>
-                  </ListItem>
-                </Link>
+                <SideItem
+                  onClick={() => { context.routes.level3 = subcategoryRoute }}
+                  linkToGo={`/tehran/${subcategoryRoute}`}
+                  text={subcategoryText}
+                  actStyle={{ color: "red" }}
+                />
               </Box>
             );
           });

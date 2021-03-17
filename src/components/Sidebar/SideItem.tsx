@@ -5,7 +5,7 @@ import { NavLink, useParams } from "react-router-dom"
 import { ListItem } from '@material-ui/core';
 
 interface PropsType {
-  Icon: React.ComponentType; 
+  Icon?: React.ElementType; 
   text: string; 
   linkToGo: string; 
   actStyle?: object;
@@ -15,13 +15,11 @@ interface PropsType {
 
 const SideItem = ( { Icon, text, linkToGo, actStyle, onClick, style } : PropsType ) => {
 
-  const param = useParams()
-
   return (
     <ListItem>
       <Link onClick={onClick} component={NavLink} to={`${linkToGo}`} underline="none" color="textSecondary" activeStyle={actStyle} style={style} >
         <Box display="flex" width="100%">
-          <Icon />
+          {Icon && <Icon />}
           <span style={{marginRight: '10px'}}>{text}</span>
         </Box>
       </Link>
