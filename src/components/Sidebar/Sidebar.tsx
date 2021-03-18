@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Route, Switch, Redirect } from "react-router-dom"
+import { DivarContext } from '../context/divarContext'
 import TopLevelSidebar from './TopLevelSidebar'
 
 const Sidebar = () => {
+
+  const { city } = useContext(DivarContext)
   
   return (
     <div style={{width: '400px', marginTop: "100px", position: "sticky", padding: "0 25px"}}>
@@ -14,7 +17,7 @@ const Sidebar = () => {
         <Switch>
           <Route exact path="/tehran/:category/:district" component={TopLevelSidebar} />
           <Route exact path="/tehran/:category" component={TopLevelSidebar} />
-          <Route exact path="/tehran" component={TopLevelSidebar} />
+          <Route exact path={`/${city}`} component={TopLevelSidebar} />
           <Route exact path="/" render={() => <Redirect to="/tehran" />} />
         </Switch>
     </div>
