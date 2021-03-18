@@ -32,7 +32,7 @@ import ClickAwayListener from '@material-ui/core/ClickAwayListener'
 //   }
 // })
 
-function Header() {
+function Navbar() {
 
   const [menuState, setMenuState] = React.useState(false);
 
@@ -135,4 +135,4 @@ function Header() {
   )
 }
 
-export default Header
+export default Navbar

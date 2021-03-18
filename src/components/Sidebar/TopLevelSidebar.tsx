@@ -6,35 +6,37 @@ import { DivarContext } from "../context/divarContext";
 import { topLevelRoutesTitlesIcons } from "./dataStructured";
 import Level2Sidebar from "./Level2Sidebar";
 import ReturnToAll from "./ReturnToAll";
+// import FilterButton from "./filters/FilterButton";
+// import FilterSelect from "./filters/FilterSelect";
+// import FilterSwitch from "./filters/FilterSwitch";
 
 const TopLevelSidebar = () => {
-  const context = useContext(DivarContext);
+  const { routes, city } = useContext(DivarContext);
   // console.log("TopLevelSidebar")
 
   // const { url } = useRouteMatch()
   // context.setUrl(url)
 
-  console.log(context.routes)
+  console.log(routes)
   return (
     <List>
-      {topLevelRoutesTitlesIcons.map(({ route, text, icon, subCategories }) => {
-        if (route === context.routes.topLevel) {
+      {topLevelRoutesTitlesIcons.map(({ route, text, icon, subCategories }, index) => {
+        if (route === routes.topLevel) {
           return (
-            // <List key={text}>
             <>
             
               <ReturnToAll />
 
               <SideItem
                 onClick={() => {
-                  context.routes.topLevel = route;
-                  context.routes.level2 = "";
-                  context.routes.level3 = "";
+                  routes.topLevel = route;
+                  routes.level2 = "";
+                  routes.level3 = "";
                 }}
-                linkToGo={`/tehran/${route}`}
+                linkToGo={`/${city}/${route}`}
                 text={text}
                 Icon={icon}
-                style={{ color: context.routes.topLevel === route ? "black" : "" }}
+                style={{ color: routes.topLevel === route ? "black" : "" }}
               />
 
               <Level2Sidebar subCategories={subCategories} />
@@ -43,22 +45,29 @@ const TopLevelSidebar = () => {
           );
         }
 
-        if (!context.routes.topLevel) {
+        if (!routes.topLevel) {
           return (
             <SideItem
-              key={text}
               onClick={() => {
-                context.routes.topLevel = route;
-                context.routes.level2 = "";
-                context.routes.level3 = "";
+                routes.topLevel = route;
+                routes.level2 = "";
+                routes.level3 = "";
               }}
-              linkToGo={`/tehran/${route}`}
+              linkToGo={`/${city}/${route}`}
               Icon={icon}
               text={text}
             />
           );
         }
+        return undefined
       })}
+      
+      {/* <FilterButton filterText="دسته" />
+
+      <FilterSelect />
+
+      <FilterSwitch /> */}
+
     </List>
   );
 };

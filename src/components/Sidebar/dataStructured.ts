@@ -100,366 +100,6 @@ enum level2PersianTexts {
   "art-media-jobs" = "هنری و رسانه"
 }
 
-const { "real-estate": realEstate, vehicles, "electronic-devices": electronicDevices, "home-and-kitchen": homeAndKitchen, services, "personal-goods": personalGoods, entertainment, "social-services": socialServices, businesses, jobs } = TopLevelPersianTexts
-
-export const topLevelRoutesTitlesIcons = [
-  { 
-    route: "real-estate", text: realEstate, icon: HouseOutlined,
-    subCategories: 
-    [
-      { subCategoryRoute: "buy-residential", subCategoryText: level2PersianTexts["buy-residential"] },
-      { subCategoryRoute: "rent-residential", subCategoryText: level2PersianTexts["rent-residential"] },
-      { subCategoryRoute: "buy-commercial-property", subCategoryText: level2PersianTexts["buy-commercial-property"] },
-      { subCategoryRoute: "rent-commercial-property", subCategoryText: level2PersianTexts["rent-commercial-property"] },
-      { subCategoryRoute: "rent-temporary", subCategoryText: level2PersianTexts["rent-temporary"] },
-      { subCategoryRoute: "real-estate-services", subCategoryText: level2PersianTexts["real-estate-services"] },
-    ]  
-  },
-  { route: "vehicles", text: vehicles, icon: Car,
-  subCategories: 
-  [
-    { subCategoryRoute: "auto", subCategoryText: level2PersianTexts.auto },
-    { subCategoryRoute: "car-accessories", subCategoryText: level2PersianTexts["car-accessories"] },
-    { subCategoryRoute: "motorcycles", subCategoryText: level2PersianTexts.motorcycles },
-    { subCategoryRoute: "boat", subCategoryText: level2PersianTexts.boat },
-  ]  },
-  { route: "electronic-devices", text: electronicDevices, icon: SmartPhone,
-  subCategories: 
-  [
-    { subCategoryRoute: "mobile-tablet", subCategoryText: level2PersianTexts["mobile-tablet"] },
-    { subCategoryRoute: "computers", subCategoryText: level2PersianTexts.computers },
-    { subCategoryRoute: "game-consoles", subCategoryText: level2PersianTexts["game-consoles"] },
-    { subCategoryRoute: "video-audio-device", subCategoryText: level2PersianTexts["video-audio-device"] },
-    { subCategoryRoute: "telephone", subCategoryText: level2PersianTexts.telephone },
-  ]  },
-  { route: "home-and-kitchen", text: homeAndKitchen, icon: Furniture,
-  subCategories: 
-  [
-    { subCategoryRoute: "home-decor-furniture", subCategoryText: level2PersianTexts["home-decor-furniture"] },
-    { subCategoryRoute: "kitchen-appliances", subCategoryText: level2PersianTexts["kitchen-appliances"] },
-    { subCategoryRoute: "home-appliances", subCategoryText: level2PersianTexts["home-appliances"] },
-    { subCategoryRoute: "building-garden", subCategoryText: level2PersianTexts["building-garden"] },
-  ]  },
-  { route: "services", text: services, icon: Build,
-  subCategories: 
-  [
-    { subCategoryRoute: "vehicles-services", subCategoryText: level2PersianTexts["vehicles-services"] },
-    { subCategoryRoute: "catering-services", subCategoryText: level2PersianTexts["catering-services"] },
-    { subCategoryRoute: "technology-services", subCategoryText: level2PersianTexts["technology-services"] },
-    { subCategoryRoute: "financial-services", subCategoryText: level2PersianTexts["financial-services"] },
-    { subCategoryRoute: "transport-logistic-services", subCategoryText: level2PersianTexts["transport-logistic-services"] },
-    { subCategoryRoute: "craft-skill-services", subCategoryText: level2PersianTexts["craft-skill-services"] },
-    { subCategoryRoute: "beauty-services", subCategoryText: level2PersianTexts["beauty-services"] },
-    { subCategoryRoute: "entertaining-services", subCategoryText: level2PersianTexts["entertaining-services"] },
-    { subCategoryRoute: "cleaning-services", subCategoryText: level2PersianTexts["cleaning-services"] },
-    { subCategoryRoute: "gardening-services", subCategoryText: level2PersianTexts["gardening-services"] },
-    { subCategoryRoute: "teaching-services", subCategoryText: level2PersianTexts["teaching-services"] },
-  ]  },
-  { route: "personal-goods", text: personalGoods, icon: Watch,
-  subCategories: 
-  [
-    { subCategoryRoute: "apparel", subCategoryText: level2PersianTexts.apparel },
-    { subCategoryRoute: "accessories", subCategoryText: level2PersianTexts.accessories },
-    { subCategoryRoute: "beauty-and-personal-care", subCategoryText: level2PersianTexts["beauty-and-personal-care"] },
-    { subCategoryRoute: "child-apparel", subCategoryText: level2PersianTexts["child-apparel"] },
-    { subCategoryRoute: "child-products", subCategoryText: level2PersianTexts["child-products"] },
-    { subCategoryRoute: "stationery", subCategoryText: level2PersianTexts.stationery },
-  ]  },
-  { route: "entertainment", text: entertainment, icon: Dice,
-  subCategories: 
-  [
-    { subCategoryRoute: "ticket", subCategoryText: level2PersianTexts.ticket },
-    { subCategoryRoute: "tours", subCategoryText: level2PersianTexts.tours },
-    { subCategoryRoute: "publication", subCategoryText: level2PersianTexts.publication },
-    { subCategoryRoute: "bike-skate-scooter", subCategoryText: level2PersianTexts["bike-skate-scooter"] },
-    { subCategoryRoute: "pets-animals", subCategoryText: level2PersianTexts["pets-animals"] },
-    { subCategoryRoute: "collecting", subCategoryText: level2PersianTexts.collecting },
-    { subCategoryRoute: "musical-instruments", subCategoryText: level2PersianTexts["musical-instruments"] },
-    { subCategoryRoute: "sport-entertainment", subCategoryText: level2PersianTexts["sport-entertainment"] },
-    { subCategoryRoute: "game-and-toys", subCategoryText: level2PersianTexts["game-and-toys"] },
-  ]  },
-  { route: "social-services", text: socialServices, icon: People,
-  subCategories:
-  [
-    { subCategoryRoute: "event", subCategoryText: level2PersianTexts.event },
-    { subCategoryRoute: "voluntary", subCategoryText: level2PersianTexts.voluntary },
-    { subCategoryRoute: "missing", subCategoryText: level2PersianTexts.missing },
-  ]  },
-  { route: "businesses", text: businesses, icon: Work,
-  subCategories: 
-  [
-    { subCategoryRoute: "business-equipment", subCategoryText: level2PersianTexts["business-equipment"] },
-    { subCategoryRoute: "wholesale", subCategoryText: level2PersianTexts.wholesale },
-  ]  },
-  { route: "jobs", text: jobs, icon: Business,
-  subCategories: 
-  [
-    { subCategoryRoute: "administrative-jobs", subCategoryText: level2PersianTexts["administrative-jobs"] },
-    { subCategoryRoute: "janitorial-jobs", subCategoryText: level2PersianTexts["janitorial-jobs"] },
-    { subCategoryRoute: "architect-jobs", subCategoryText: level2PersianTexts["architect-jobs"] },
-    { subCategoryRoute: "service-jobs", subCategoryText: level2PersianTexts["service-jobs"] },
-    { subCategoryRoute: "it-computer-jobs", subCategoryText: level2PersianTexts["it-computer-jobs"] },
-    { subCategoryRoute: "finance-legal-jobs", subCategoryText: level2PersianTexts["finance-legal-jobs"] },
-    { subCategoryRoute: "marketing-jobs", subCategoryText: level2PersianTexts["marketing-jobs"] },
-    { subCategoryRoute: "technical-jobs", subCategoryText: level2PersianTexts["technical-jobs"] },
-    { subCategoryRoute: "teaching-jobs", subCategoryText: level2PersianTexts["teaching-jobs"] },
-    { subCategoryRoute: "transport-delivery-jobs", subCategoryText: level2PersianTexts["transport-delivery-jobs"] },
-    { subCategoryRoute: "health-beauty-jobs", subCategoryText: level2PersianTexts["health-beauty-jobs"] },
-    { subCategoryRoute: "art-media-jobs", subCategoryText: level2PersianTexts["art-media-jobs"] },
-  ]  },
-]
-
-
-
-export const level2SubCategories = [
-  { route: "real-estate", 
-    subCategories: 
-      [
-        { subCategoryRoute: "buy-residential", subCategoryText: level2PersianTexts["buy-residential"] },
-        { subCategoryRoute: "rent-residential", subCategoryText: level2PersianTexts["rent-residential"] },
-        { subCategoryRoute: "buy-commercial-property", subCategoryText: level2PersianTexts["buy-commercial-property"] },
-        { subCategoryRoute: "rent-commercial-property", subCategoryText: level2PersianTexts["rent-commercial-property"] },
-        { subCategoryRoute: "rent-temporary", subCategoryText: level2PersianTexts["rent-temporary"] },
-        { subCategoryRoute: "real-estate-services", subCategoryText: level2PersianTexts["real-estate-services"] },
-      ]
-  },
-  {
-    route: "vehicles",
-    subCategories: 
-      [
-        { subCategoryRoute: "auto", subCategoryText: level2PersianTexts.auto },
-        { subCategoryRoute: "car-accessories", subCategoryText: level2PersianTexts["car-accessories"] },
-        { subCategoryRoute: "motorcycles", subCategoryText: level2PersianTexts.motorcycles },
-        { subCategoryRoute: "boat", subCategoryText: level2PersianTexts.boat },
-      ]
-  },
-  {
-    route: "electronic-devices",
-    subCategories: 
-    [
-      { subCategoryRoute: "mobile-tablet", subCategoryText: level2PersianTexts["mobile-tablet"] },
-      { subCategoryRoute: "computers", subCategoryText: level2PersianTexts.computers },
-      { subCategoryRoute: "game-consoles", subCategoryText: level2PersianTexts["game-consoles"] },
-      { subCategoryRoute: "video-audio-device", subCategoryText: level2PersianTexts["video-audio-device"] },
-      { subCategoryRoute: "telephone", subCategoryText: level2PersianTexts.telephone },
-    ]
-  },
-  {
-    route: "home-and-kitchen",
-    subCategories: 
-    [
-      { subCategoryRoute: "home-decor-furniture", subCategoryText: level2PersianTexts["home-decor-furniture"] },
-      { subCategoryRoute: "kitchen-appliances", subCategoryText: level2PersianTexts["kitchen-appliances"] },
-      { subCategoryRoute: "home-appliances", subCategoryText: level2PersianTexts["home-appliances"] },
-      { subCategoryRoute: "building-garden", subCategoryText: level2PersianTexts["building-garden"] },
-    ]
-  },
-  {
-    route: "services",
-    subCategories: 
-    [
-      { subCategoryRoute: "vehicles-services", subCategoryText: level2PersianTexts["vehicles-services"] },
-      { subCategoryRoute: "catering-services", subCategoryText: level2PersianTexts["catering-services"] },
-      { subCategoryRoute: "technology-services", subCategoryText: level2PersianTexts["technology-services"] },
-      { subCategoryRoute: "financial-services", subCategoryText: level2PersianTexts["financial-services"] },
-      { subCategoryRoute: "transport-logistic-services", subCategoryText: level2PersianTexts["transport-logistic-services"] },
-      { subCategoryRoute: "craft-skill-services", subCategoryText: level2PersianTexts["craft-skill-services"] },
-      { subCategoryRoute: "beauty-services", subCategoryText: level2PersianTexts["beauty-services"] },
-      { subCategoryRoute: "entertaining-services", subCategoryText: level2PersianTexts["entertaining-services"] },
-      { subCategoryRoute: "cleaning-services", subCategoryText: level2PersianTexts["cleaning-services"] },
-      { subCategoryRoute: "gardening-services", subCategoryText: level2PersianTexts["gardening-services"] },
-      { subCategoryRoute: "teaching-services", subCategoryText: level2PersianTexts["teaching-services"] },
-    ]
-  },
-  {
-    route: "personal-goods",
-    subCategories: 
-    [
-      { subCategoryRoute: "apparel", subCategoryText: level2PersianTexts.apparel },
-      { subCategoryRoute: "accessories", subCategoryText: level2PersianTexts.accessories },
-      { subCategoryRoute: "beauty-and-personal-care", subCategoryText: level2PersianTexts["beauty-and-personal-care"] },
-      { subCategoryRoute: "child-apparel", subCategoryText: level2PersianTexts["child-apparel"] },
-      { subCategoryRoute: "child-products", subCategoryText: level2PersianTexts["child-products"] },
-      { subCategoryRoute: "stationery", subCategoryText: level2PersianTexts.stationery },
-    ]
-  },
-  {
-    route: "entertainment",
-    subCategories: 
-    [
-      { subCategoryRoute: "ticket", subCategoryText: level2PersianTexts.ticket },
-      { subCategoryRoute: "tours", subCategoryText: level2PersianTexts.tours },
-      { subCategoryRoute: "publication", subCategoryText: level2PersianTexts.publication },
-      { subCategoryRoute: "bike-skate-scooter", subCategoryText: level2PersianTexts["bike-skate-scooter"] },
-      { subCategoryRoute: "pets-animals", subCategoryText: level2PersianTexts["pets-animals"] },
-      { subCategoryRoute: "collecting", subCategoryText: level2PersianTexts.collecting },
-      { subCategoryRoute: "musical-instruments", subCategoryText: level2PersianTexts["musical-instruments"] },
-      { subCategoryRoute: "sport-entertainment", subCategoryText: level2PersianTexts["sport-entertainment"] },
-      { subCategoryRoute: "game-and-toys", subCategoryText: level2PersianTexts["game-and-toys"] },
-    ]
-  },
-  {
-    route: "social-services",
-    subCategories:
-      [
-        { subCategoryRoute: "event", subCategoryText: level2PersianTexts.event },
-        { subCategoryRoute: "voluntary", subCategoryText: level2PersianTexts.voluntary },
-        { subCategoryRoute: "missing", subCategoryText: level2PersianTexts.missing },
-      ]
-  },
-  {
-    route: "businesses",
-    subCategories: 
-      [
-        { subCategoryRoute: "business-equipment", subCategoryText: level2PersianTexts["business-equipment"] },
-        { subCategoryRoute: "wholesale", subCategoryText: level2PersianTexts.wholesale },
-      ]
-  },
-  {
-    route: "jobs",
-    subCategories: 
-      [
-        { subCategoryRoute: "administrative-jobs", subCategoryText: level2PersianTexts["administrative-jobs"] },
-        { subCategoryRoute: "janitorial-jobs", subCategoryText: level2PersianTexts["janitorial-jobs"] },
-        { subCategoryRoute: "architect-jobs", subCategoryText: level2PersianTexts["architect-jobs"] },
-        { subCategoryRoute: "service-jobs", subCategoryText: level2PersianTexts["service-jobs"] },
-        { subCategoryRoute: "it-computer-jobs", subCategoryText: level2PersianTexts["it-computer-jobs"] },
-        { subCategoryRoute: "finance-legal-jobs", subCategoryText: level2PersianTexts["finance-legal-jobs"] },
-        { subCategoryRoute: "marketing-jobs", subCategoryText: level2PersianTexts["marketing-jobs"] },
-        { subCategoryRoute: "technical-jobs", subCategoryText: level2PersianTexts["technical-jobs"] },
-        { subCategoryRoute: "teaching-jobs", subCategoryText: level2PersianTexts["teaching-jobs"] },
-        { subCategoryRoute: "transport-delivery-jobs", subCategoryText: level2PersianTexts["transport-delivery-jobs"] },
-        { subCategoryRoute: "health-beauty-jobs", subCategoryText: level2PersianTexts["health-beauty-jobs"] },
-        { subCategoryRoute: "art-media-jobs", subCategoryText: level2PersianTexts["art-media-jobs"] },
-      ]
-  },
-]
-
-// export const level2SubCategories = [
-//   { route: "real-estate", 
-//     subCategories: 
-//       {
-//         buyResidential: { subCategoryRoute: "buy-residential", subCategoryText: level2PersianTexts["buy-residential"] },
-//         rentResidential: { subCategoryRoute: "rent-residential", subCategoryText: level2PersianTexts["rent-residential"] },
-//         buyCommercialProperty: { subCategoryRoute: "buy-commercial-property", subCategoryText: level2PersianTexts["buy-commercial-property"] },
-//         rentCommercialProperty: { subCategoryRoute: "rent-commercial-property", subCategoryText: level2PersianTexts["rent-commercial-property"] },
-//         rentTemporary: { subCategoryRoute: "rent-temporary", subCategoryText: level2PersianTexts["rent-temporary"] },
-//         realEstateServices: { subCategoryRoute: "real-estate-services", subCategoryText: level2PersianTexts["real-estate-services"] },
-//       }
-//   },
-//   {
-//     route: "vehicles",
-//     subCategories: 
-//       {
-//         auto: { subCategoryRoute: "auto", subCategoryText: level2PersianTexts.auto },
-//         carAccessories: { subCategoryRoute: "car-accessories", subCategoryText: level2PersianTexts["car-accessories"] },
-//         motorcycles: { subCategoryRoute: "motorcycles", subCategoryText: level2PersianTexts.motorcycles },
-//         boat: { subCategoryRoute: "boat", subCategoryText: level2PersianTexts.boat },
-//       }
-//   },
-//   {
-//     route: "electronic-devices",
-//     subCategories: 
-//     {
-//       mobileTablet: { subCategoryRoute: "mobile-tablet", subCategoryText: level2PersianTexts["mobile-tablet"] },
-//       computers: { subCategoryRoute: "computers", subCategoryText: level2PersianTexts.computers },
-//       gameConsoles: { subCategoryRoute: "game-consoles", subCategoryText: level2PersianTexts["game-consoles"] },
-//       videoAudioDevice: { subCategoryRoute: "video-audio-device", subCategoryText: level2PersianTexts["video-audio-device"] },
-//       telephone: { subCategoryRoute: "telephone", subCategoryText: level2PersianTexts.telephone },
-//     }
-//   },
-//   {
-//     route: "home-and-kitchen",
-//     subCategories: 
-//     {
-//       homeDecorFurniture: { subCategoryRoute: "home-decor-furniture", subCategoryText: level2PersianTexts["home-decor-furniture"] },
-//       kitchenAppliances: { subCategoryRoute: "kitchen-appliances", subCategoryText: level2PersianTexts["kitchen-appliances"] },
-//       homeAppliances: { subCategoryRoute: "home-appliances", subCategoryText: level2PersianTexts["home-appliances"] },
-//       buildingGarden: { subCategoryRoute: "building-garden", subCategoryText: level2PersianTexts["building-garden"] },
-//     }
-//   },
-//   {
-//     route: "services",
-//     subCategories: 
-//     {
-//       vehiclesServices: { subCategoryRoute: "vehicles-services", subCategoryText: level2PersianTexts["vehicles-services"] },
-//       cateringServices: { subCategoryRoute: "catering-services", subCategoryText: level2PersianTexts["catering-services"] },
-//       technologyServices: { subCategoryRoute: "technology-services", subCategoryText: level2PersianTexts["technology-services"] },
-//       financialServices: { subCategoryRoute: "financial-services", subCategoryText: level2PersianTexts["financial-services"] },
-//       transportLogisticServices: { subCategoryRoute: "transport-logistic-services", subCategoryText: level2PersianTexts["transport-logistic-services"] },
-//       craftSkillServices: { subCategoryRoute: "craft-skill-services", subCategoryText: level2PersianTexts["craft-skill-services"] },
-//       beautyServices: { subCategoryRoute: "beauty-services", subCategoryText: level2PersianTexts["beauty-services"] },
-//       entertainingServices: { subCategoryRoute: "entertaining-services", subCategoryText: level2PersianTexts["entertaining-services"] },
-//       cleaningServices: { subCategoryRoute: "cleaning-services", subCategoryText: level2PersianTexts["cleaning-services"] },
-//       gardeningServices: { subCategoryRoute: "gardening-services", subCategoryText: level2PersianTexts["gardening-services"] },
-//       teachingServices: { subCategoryRoute: "teaching-services", subCategoryText: level2PersianTexts["teaching-services"] },
-//     }
-//   },
-//   {
-//     route: "personal-goods",
-//     subCategories: 
-//     {
-//       apparel: { subCategoryRoute: "apparel", subCategoryText: level2PersianTexts.apparel },
-//       accessories: { subCategoryRoute: "accessories", subCategoryText: level2PersianTexts.accessories },
-//       beautyAndPersonalCare: { subCategoryRoute: "beauty-and-personal-care", subCategoryText: level2PersianTexts["beauty-and-personal-care"] },
-//       childApparel: { subCategoryRoute: "child-apparel", subCategoryText: level2PersianTexts["child-apparel"] },
-//       childProducts: { subCategoryRoute: "child-products", subCategoryText: level2PersianTexts["child-products"] },
-//       stationery: { subCategoryRoute: "stationery", subCategoryText: level2PersianTexts.stationery },
-//     }
-//   },
-//   {
-//     route: "entertainment",
-//     subCategories: 
-//     {
-//       ticket: { subCategoryRoute: "ticket", subCategoryText: level2PersianTexts.ticket },
-//       tours: { subCategoryRoute: "tours", subCategoryText: level2PersianTexts.tours },
-//       publication: { subCategoryRoute: "publication", subCategoryText: level2PersianTexts.publication },
-//       bikeSkateScooter: { subCategoryRoute: "bike-skate-scooter", subCategoryText: level2PersianTexts["bike-skate-scooter"] },
-//       petsAnimals: { subCategoryRoute: "pets-animals", subCategoryText: level2PersianTexts["pets-animals"] },
-//       collecting: { subCategoryRoute: "collecting", subCategoryText: level2PersianTexts.collecting },
-//       musicalInstruments: { subCategoryRoute: "musical-instruments", subCategoryText: level2PersianTexts["musical-instruments"] },
-//       sportEntertainment: { subCategoryRoute: "sport-entertainment", subCategoryText: level2PersianTexts["sport-entertainment"] },
-//       gameAndToys: { subCategoryRoute: "game-and-toys", subCategoryText: level2PersianTexts["game-and-toys"] },
-
-//     }
-//   },
-//   {
-//     route: "social-services",
-//     subCategories:
-//       {
-//         event: { subCategoryRoute: "event", subCategoryText: level2PersianTexts.event },
-//         voluntary: { subCategoryRoute: "voluntary", subCategoryText: level2PersianTexts.voluntary },
-//         missing: { subCategoryRoute: "missing", subCategoryText: level2PersianTexts.missing },
-//       }
-//   },
-//   {
-//     route: "businesses",
-//     subCategories: 
-//       {
-//         businessEquipment: { subCategoryRoute: "business-equipment", subCategoryText: level2PersianTexts["business-equipment"] },
-//         wholesale: { subCategoryRoute: "wholesale", subCategoryText: level2PersianTexts.wholesale },
-//       }
-//   },
-//   {
-//     route: "jobs",
-//     subCategories: 
-//       {
-//         administrativeJobs: { subCategoryRoute: "administrative-jobs", subCategoryText: level2PersianTexts["administrative-jobs"] },
-//         janitorialJobs: { subCategoryRoute: "janitorial-jobs", subCategoryText: level2PersianTexts["janitorial-jobs"] },
-//         architectJobs: { subCategoryRoute: "architect-jobs", subCategoryText: level2PersianTexts["architect-jobs"] },
-//         serviceJobs: { subCategoryRoute: "service-jobs", subCategoryText: level2PersianTexts["service-jobs"] },
-//         itComputerJobs: { subCategoryRoute: "it-computer-jobs", subCategoryText: level2PersianTexts["it-computer-jobs"] },
-//         financeLegalJobs: { subCategoryRoute: "finance-legal-jobs", subCategoryText: level2PersianTexts["finance-legal-jobs"] },
-//         marketingJobs: { subCategoryRoute: "marketing-jobs", subCategoryText: level2PersianTexts["marketing-jobs"] },
-//         technicalJobs: { subCategoryRoute: "technical-jobs", subCategoryText: level2PersianTexts["technical-jobs"] },
-//         teachingJobs: { subCategoryRoute: "teaching-jobs", subCategoryText: level2PersianTexts["teaching-jobs"] },
-//         transportDeliveryJobs: { subCategoryRoute: "transport-delivery-jobs", subCategoryText: level2PersianTexts["transport-delivery-jobs"] },
-//         healthBeautyJobs: { subCategoryRoute: "health-beauty-jobs", subCategoryText: level2PersianTexts["health-beauty-jobs"] },
-//         artMediaJobs: { subCategoryRoute: "art-media-jobs", subCategoryText: level2PersianTexts["art-media-jobs"] },
-//       }
-//   },
-// ]
-
 export enum Level3PersianTexts {
   "buy-apartment" = "آپارتمان",
   "buy-villa" = "خانه و ویلا",
@@ -613,6 +253,8 @@ export enum Level3PersianTexts {
   "restaurant-equipment" = "کافی شاپ و رستوران",
   "medical-equipment" = "پزشکی",
 }
+
+const { "real-estate": realEstate, vehicles, "electronic-devices": electronicDevices, "home-and-kitchen": homeAndKitchen, services, "personal-goods": personalGoods, entertainment, "social-services": socialServices, businesses, jobs } = TopLevelPersianTexts
 
 export const level3SubCategories = [
   { 
@@ -1065,3 +707,366 @@ export const level3SubCategories = [
     subcategories: []
   },
 ]
+
+export const level2SubCategories = [
+  { route: "real-estate", 
+    subCategories: 
+      [
+        { subCategoryRoute: "buy-residential", subCategoryText: level2PersianTexts["buy-residential"], level3Subcategories: level3SubCategories[0].subcategories },
+        { subCategoryRoute: "rent-residential", subCategoryText: level2PersianTexts["rent-residential"], level3Subcategories: level3SubCategories[1].subcategories },
+        { subCategoryRoute: "buy-commercial-property", subCategoryText: level2PersianTexts["buy-commercial-property"], level3Subcategories: level3SubCategories[2].subcategories },
+        { subCategoryRoute: "rent-commercial-property", subCategoryText: level2PersianTexts["rent-commercial-property"], level3Subcategories: level3SubCategories[3].subcategories },
+        { subCategoryRoute: "rent-temporary", subCategoryText: level2PersianTexts["rent-temporary"], level3Subcategories: level3SubCategories[4].subcategories },
+        { subCategoryRoute: "real-estate-services", subCategoryText: level2PersianTexts["real-estate-services"], level3Subcategories: level3SubCategories[5].subcategories },
+      ]
+  },
+  {
+    route: "vehicles",
+    subCategories: 
+      [
+        { subCategoryRoute: "auto", subCategoryText: level2PersianTexts.auto, level3Subcategories: level3SubCategories[6].subcategories },
+        { subCategoryRoute: "car-accessories", subCategoryText: level2PersianTexts["car-accessories"], level3Subcategories: level3SubCategories[7].subcategories },
+        { subCategoryRoute: "motorcycles", subCategoryText: level2PersianTexts.motorcycles, level3Subcategories: level3SubCategories[8].subcategories },
+        { subCategoryRoute: "boat", subCategoryText: level2PersianTexts.boat, level3Subcategories: level3SubCategories[9].subcategories },
+      ]
+  },
+  {
+    route: "electronic-devices",
+    subCategories: 
+    [
+      { subCategoryRoute: "mobile-tablet", subCategoryText: level2PersianTexts["mobile-tablet"], level3Subcategories: level3SubCategories[10].subcategories },
+      { subCategoryRoute: "computers", subCategoryText: level2PersianTexts.computers, level3Subcategories: level3SubCategories[11].subcategories },
+      { subCategoryRoute: "game-consoles", subCategoryText: level2PersianTexts["game-consoles"], level3Subcategories: level3SubCategories[12].subcategories },
+      { subCategoryRoute: "video-audio-device", subCategoryText: level2PersianTexts["video-audio-device"], level3Subcategories: level3SubCategories[13].subcategories },
+      { subCategoryRoute: "telephone", subCategoryText: level2PersianTexts.telephone, level3Subcategories: level3SubCategories[14].subcategories },
+    ]
+  },
+  {
+    route: "home-and-kitchen",
+    subCategories: 
+    [
+      { subCategoryRoute: "home-decor-furniture", subCategoryText: level2PersianTexts["home-decor-furniture"], level3Subcategories: level3SubCategories[15].subcategories },
+      { subCategoryRoute: "kitchen-appliances", subCategoryText: level2PersianTexts["kitchen-appliances"], level3Subcategories: level3SubCategories[16].subcategories },
+      { subCategoryRoute: "home-appliances", subCategoryText: level2PersianTexts["home-appliances"], level3Subcategories: level3SubCategories[17].subcategories },
+      { subCategoryRoute: "building-garden", subCategoryText: level2PersianTexts["building-garden"], level3Subcategories: level3SubCategories[18].subcategories },
+    ]
+  },
+  {
+    route: "services",
+    subCategories: 
+    [
+      { subCategoryRoute: "vehicles-services", subCategoryText: level2PersianTexts["vehicles-services"], level3Subcategories: level3SubCategories[19].subcategories },
+      { subCategoryRoute: "catering-services", subCategoryText: level2PersianTexts["catering-services"], level3Subcategories: level3SubCategories[20].subcategories },
+      { subCategoryRoute: "technology-services", subCategoryText: level2PersianTexts["technology-services"], level3Subcategories: level3SubCategories[21].subcategories },
+      { subCategoryRoute: "financial-services", subCategoryText: level2PersianTexts["financial-services"], level3Subcategories: level3SubCategories[22].subcategories },
+      { subCategoryRoute: "transport-logistic-services", subCategoryText: level2PersianTexts["transport-logistic-services"], level3Subcategories: level3SubCategories[23].subcategories },
+      { subCategoryRoute: "craft-skill-services", subCategoryText: level2PersianTexts["craft-skill-services"], level3Subcategories: level3SubCategories[24].subcategories },
+      { subCategoryRoute: "beauty-services", subCategoryText: level2PersianTexts["beauty-services"], level3Subcategories: level3SubCategories[25].subcategories },
+      { subCategoryRoute: "entertaining-services", subCategoryText: level2PersianTexts["entertaining-services"], level3Subcategories: level3SubCategories[26].subcategories },
+      { subCategoryRoute: "cleaning-services", subCategoryText: level2PersianTexts["cleaning-services"], level3Subcategories: level3SubCategories[27].subcategories },
+      { subCategoryRoute: "gardening-services", subCategoryText: level2PersianTexts["gardening-services"], level3Subcategories: level3SubCategories[28].subcategories },
+      { subCategoryRoute: "teaching-services", subCategoryText: level2PersianTexts["teaching-services"], level3Subcategories: level3SubCategories[29].subcategories },
+    ]
+  },
+  {
+    route: "personal-goods",
+    subCategories: 
+    [
+      { subCategoryRoute: "apparel", subCategoryText: level2PersianTexts.apparel, level3Subcategories: level3SubCategories[30].subcategories },
+      { subCategoryRoute: "accessories", subCategoryText: level2PersianTexts.accessories, level3Subcategories: level3SubCategories[31].subcategories },
+      { subCategoryRoute: "beauty-and-personal-care", subCategoryText: level2PersianTexts["beauty-and-personal-care"], level3Subcategories: level3SubCategories[32].subcategories },
+      { subCategoryRoute: "child-apparel", subCategoryText: level2PersianTexts["child-apparel"], level3Subcategories: level3SubCategories[33].subcategories },
+      { subCategoryRoute: "child-products", subCategoryText: level2PersianTexts["child-products"], level3Subcategories: level3SubCategories[34].subcategories },
+      { subCategoryRoute: "stationery", subCategoryText: level2PersianTexts.stationery, level3Subcategories: level3SubCategories[35].subcategories },
+    ]
+  },
+  {
+    route: "entertainment",
+    subCategories: 
+    [
+      { subCategoryRoute: "ticket", subCategoryText: level2PersianTexts.ticket, level3Subcategories: level3SubCategories[36].subcategories },
+      { subCategoryRoute: "tours", subCategoryText: level2PersianTexts.tours, level3Subcategories: level3SubCategories[37].subcategories },
+      { subCategoryRoute: "publication", subCategoryText: level2PersianTexts.publication, level3Subcategories: level3SubCategories[38].subcategories },
+      { subCategoryRoute: "bike-skate-scooter", subCategoryText: level2PersianTexts["bike-skate-scooter"], level3Subcategories: level3SubCategories[39].subcategories },
+      { subCategoryRoute: "pets-animals", subCategoryText: level2PersianTexts["pets-animals"], level3Subcategories: level3SubCategories[40].subcategories },
+      { subCategoryRoute: "collecting", subCategoryText: level2PersianTexts.collecting },
+      { subCategoryRoute: "musical-instruments", subCategoryText: level2PersianTexts["musical-instruments"], level3Subcategories: level3SubCategories[41].subcategories },
+      { subCategoryRoute: "sport-entertainment", subCategoryText: level2PersianTexts["sport-entertainment"], level3Subcategories: level3SubCategories[42].subcategories },
+      { subCategoryRoute: "game-and-toys", subCategoryText: level2PersianTexts["game-and-toys"], level3Subcategories: level3SubCategories[43].subcategories },
+    ]
+  },
+  {
+    route: "social-services",
+    subCategories:
+      [
+        { subCategoryRoute: "event", subCategoryText: level2PersianTexts.event, level3Subcategories: level3SubCategories[44].subcategories },
+        { subCategoryRoute: "voluntary", subCategoryText: level2PersianTexts.voluntary, level3Subcategories: level3SubCategories[45].subcategories },
+        { subCategoryRoute: "missing", subCategoryText: level2PersianTexts.missing, level3Subcategories: level3SubCategories[46].subcategories },
+      ]
+  },
+  {
+    route: "businesses",
+    subCategories: 
+      [
+        { subCategoryRoute: "business-equipment", subCategoryText: level2PersianTexts["business-equipment"], level3Subcategories: level3SubCategories[47].subcategories },
+        { subCategoryRoute: "wholesale", subCategoryText: level2PersianTexts.wholesale, level3Subcategories: level3SubCategories[48].subcategories },
+      ]
+  },
+  {
+    route: "jobs",
+    subCategories: 
+      [
+        { subCategoryRoute: "administrative-jobs", subCategoryText: level2PersianTexts["administrative-jobs"], level3Subcategories: level3SubCategories[49].subcategories },
+        { subCategoryRoute: "janitorial-jobs", subCategoryText: level2PersianTexts["janitorial-jobs"], level3Subcategories: level3SubCategories[50].subcategories },
+        { subCategoryRoute: "architect-jobs", subCategoryText: level2PersianTexts["architect-jobs"], level3Subcategories: level3SubCategories[51].subcategories },
+        { subCategoryRoute: "service-jobs", subCategoryText: level2PersianTexts["service-jobs"], level3Subcategories: level3SubCategories[52].subcategories },
+        { subCategoryRoute: "it-computer-jobs", subCategoryText: level2PersianTexts["it-computer-jobs"], level3Subcategories: level3SubCategories[53].subcategories },
+        { subCategoryRoute: "finance-legal-jobs", subCategoryText: level2PersianTexts["finance-legal-jobs"], level3Subcategories: level3SubCategories[54].subcategories },
+        { subCategoryRoute: "marketing-jobs", subCategoryText: level2PersianTexts["marketing-jobs"], level3Subcategories: level3SubCategories[55].subcategories },
+        { subCategoryRoute: "technical-jobs", subCategoryText: level2PersianTexts["technical-jobs"], level3Subcategories: level3SubCategories[56].subcategories },
+        { subCategoryRoute: "teaching-jobs", subCategoryText: level2PersianTexts["teaching-jobs"], level3Subcategories: level3SubCategories[57].subcategories },
+        { subCategoryRoute: "transport-delivery-jobs", subCategoryText: level2PersianTexts["transport-delivery-jobs"], level3Subcategories: level3SubCategories[58].subcategories },
+        { subCategoryRoute: "health-beauty-jobs", subCategoryText: level2PersianTexts["health-beauty-jobs"], level3Subcategories: level3SubCategories[59].subcategories },
+        { subCategoryRoute: "art-media-jobs", subCategoryText: level2PersianTexts["art-media-jobs"], level3Subcategories: level3SubCategories[60].subcategories },
+      ]
+  },
+]
+
+export const topLevelRoutesTitlesIcons = [
+  { 
+    route: "real-estate", text: realEstate, icon: HouseOutlined,
+    subCategories: 
+    [
+      { subCategoryRoute: "buy-residential", subCategoryText: level2PersianTexts["buy-residential"], level2SubCategories: level3SubCategories[0].subcategories },
+      { subCategoryRoute: "rent-residential", subCategoryText: level2PersianTexts["rent-residential"], level2SubCategories: level3SubCategories[1].subcategories },
+      { subCategoryRoute: "buy-commercial-property", subCategoryText: level2PersianTexts["buy-commercial-property"], level2SubCategories: level3SubCategories[2].subcategories },
+      { subCategoryRoute: "rent-commercial-property", subCategoryText: level2PersianTexts["rent-commercial-property"], level2SubCategories: level3SubCategories[3].subcategories },
+      { subCategoryRoute: "rent-temporary", subCategoryText: level2PersianTexts["rent-temporary"], level2SubCategories: level3SubCategories[4].subcategories },
+      { subCategoryRoute: "real-estate-services", subCategoryText: level2PersianTexts["real-estate-services"], level2SubCategories: level3SubCategories[5].subcategories },
+    ]  
+  },
+  { route: "vehicles", text: vehicles, icon: Car,
+  subCategories: 
+  [
+    { subCategoryRoute: "auto", subCategoryText: level2PersianTexts.auto, level2SubCategories: level3SubCategories[6].subcategories },
+    { subCategoryRoute: "car-accessories", subCategoryText: level2PersianTexts["car-accessories"], level2SubCategories: level3SubCategories[7].subcategories },
+    { subCategoryRoute: "motorcycles", subCategoryText: level2PersianTexts.motorcycles, level2SubCategories: level3SubCategories[8].subcategories },
+    { subCategoryRoute: "boat", subCategoryText: level2PersianTexts.boat, level2SubCategories: level3SubCategories[9].subcategories },
+  ]  },
+  { route: "electronic-devices", text: electronicDevices, icon: SmartPhone,
+  subCategories: 
+  [
+    { subCategoryRoute: "mobile-tablet", subCategoryText: level2PersianTexts["mobile-tablet"], level2SubCategories: level3SubCategories[10].subcategories },
+    { subCategoryRoute: "computers", subCategoryText: level2PersianTexts.computers, level2SubCategories: level3SubCategories[11].subcategories },
+    { subCategoryRoute: "game-consoles", subCategoryText: level2PersianTexts["game-consoles"], level2SubCategories: level3SubCategories[12].subcategories },
+    { subCategoryRoute: "video-audio-device", subCategoryText: level2PersianTexts["video-audio-device"], level2SubCategories: level3SubCategories[13].subcategories },
+    { subCategoryRoute: "telephone", subCategoryText: level2PersianTexts.telephone, level2SubCategories: level3SubCategories[14].subcategories },
+  ]  },
+  { route: "home-and-kitchen", text: homeAndKitchen, icon: Furniture,
+  subCategories: 
+  [
+    { subCategoryRoute: "home-decor-furniture", subCategoryText: level2PersianTexts["home-decor-furniture"], level2SubCategories: level3SubCategories[15].subcategories },
+    { subCategoryRoute: "kitchen-appliances", subCategoryText: level2PersianTexts["kitchen-appliances"], level2SubCategories: level3SubCategories[16].subcategories },
+    { subCategoryRoute: "home-appliances", subCategoryText: level2PersianTexts["home-appliances"], level2SubCategories: level3SubCategories[17].subcategories },
+    { subCategoryRoute: "building-garden", subCategoryText: level2PersianTexts["building-garden"], level2SubCategories: level3SubCategories[18].subcategories },
+  ]  },
+  { route: "services", text: services, icon: Build,
+  subCategories: 
+  [
+    { subCategoryRoute: "vehicles-services", subCategoryText: level2PersianTexts["vehicles-services"], level2SubCategories: level3SubCategories[19].subcategories },
+    { subCategoryRoute: "catering-services", subCategoryText: level2PersianTexts["catering-services"], level2SubCategories: level3SubCategories[20].subcategories },
+    { subCategoryRoute: "technology-services", subCategoryText: level2PersianTexts["technology-services"], level2SubCategories: level3SubCategories[21].subcategories },
+    { subCategoryRoute: "financial-services", subCategoryText: level2PersianTexts["financial-services"], level2SubCategories: level3SubCategories[22].subcategories },
+    { subCategoryRoute: "transport-logistic-services", subCategoryText: level2PersianTexts["transport-logistic-services"], level2SubCategories: level3SubCategories[23].subcategories },
+    { subCategoryRoute: "craft-skill-services", subCategoryText: level2PersianTexts["craft-skill-services"], level2SubCategories: level3SubCategories[24].subcategories },
+    { subCategoryRoute: "beauty-services", subCategoryText: level2PersianTexts["beauty-services"], level2SubCategories: level3SubCategories[25].subcategories },
+    { subCategoryRoute: "entertaining-services", subCategoryText: level2PersianTexts["entertaining-services"], level2SubCategories: level3SubCategories[26].subcategories },
+    { subCategoryRoute: "cleaning-services", subCategoryText: level2PersianTexts["cleaning-services"], level2SubCategories: level3SubCategories[27].subcategories },
+    { subCategoryRoute: "gardening-services", subCategoryText: level2PersianTexts["gardening-services"], level2SubCategories: level3SubCategories[28].subcategories },
+    { subCategoryRoute: "teaching-services", subCategoryText: level2PersianTexts["teaching-services"], level2SubCategories: level3SubCategories[29].subcategories },
+  ]  },
+  { route: "personal-goods", text: personalGoods, icon: Watch,
+  subCategories: 
+  [
+    { subCategoryRoute: "apparel", subCategoryText: level2PersianTexts.apparel, level2SubCategories: level3SubCategories[30].subcategories },
+    { subCategoryRoute: "accessories", subCategoryText: level2PersianTexts.accessories, level2SubCategories: level3SubCategories[31].subcategories },
+    { subCategoryRoute: "beauty-and-personal-care", subCategoryText: level2PersianTexts["beauty-and-personal-care"], level2SubCategories: level3SubCategories[32].subcategories },
+    { subCategoryRoute: "child-apparel", subCategoryText: level2PersianTexts["child-apparel"], level2SubCategories: level3SubCategories[33].subcategories },
+    { subCategoryRoute: "child-products", subCategoryText: level2PersianTexts["child-products"], level2SubCategories: level3SubCategories[34].subcategories },
+    { subCategoryRoute: "stationery", subCategoryText: level2PersianTexts.stationery, level2SubCategories: level3SubCategories[35].subcategories },
+  ]  },
+  { route: "entertainment", text: entertainment, icon: Dice,
+  subCategories: 
+  [
+    { subCategoryRoute: "ticket", subCategoryText: level2PersianTexts.ticket, level2SubCategories: level3SubCategories[36].subcategories },
+    { subCategoryRoute: "tours", subCategoryText: level2PersianTexts.tours, level2SubCategories: level3SubCategories[37].subcategories },
+    { subCategoryRoute: "publication", subCategoryText: level2PersianTexts.publication, level2SubCategories: level3SubCategories[38].subcategories },
+    { subCategoryRoute: "bike-skate-scooter", subCategoryText: level2PersianTexts["bike-skate-scooter"], level2SubCategories: level3SubCategories[39].subcategories },
+    { subCategoryRoute: "pets-animals", subCategoryText: level2PersianTexts["pets-animals"], level2SubCategories: level3SubCategories[40].subcategories },
+    { subCategoryRoute: "collecting", subCategoryText: level2PersianTexts.collecting, level2SubCategories: level3SubCategories[41].subcategories },
+    { subCategoryRoute: "musical-instruments", subCategoryText: level2PersianTexts["musical-instruments"], level2SubCategories: level3SubCategories[42].subcategories },
+    { subCategoryRoute: "sport-entertainment", subCategoryText: level2PersianTexts["sport-entertainment"], level2SubCategories: level3SubCategories[43].subcategories },
+    { subCategoryRoute: "game-and-toys", subCategoryText: level2PersianTexts["game-and-toys"], level2SubCategories: level3SubCategories[44].subcategories },
+  ]  },
+  { route: "social-services", text: socialServices, icon: People,
+  subCategories:
+  [
+    { subCategoryRoute: "event", subCategoryText: level2PersianTexts.event, level2SubCategories: level3SubCategories[45].subcategories },
+    { subCategoryRoute: "voluntary", subCategoryText: level2PersianTexts.voluntary, level2SubCategories: level3SubCategories[46].subcategories },
+    { subCategoryRoute: "missing", subCategoryText: level2PersianTexts.missing, level2SubCategories: level3SubCategories[47].subcategories },
+  ]  },
+  { route: "businesses", text: businesses, icon: Work,
+  subCategories: 
+  [
+    { subCategoryRoute: "business-equipment", subCategoryText: level2PersianTexts["business-equipment"], level2SubCategories: level3SubCategories[48].subcategories },
+    { subCategoryRoute: "wholesale", subCategoryText: level2PersianTexts.wholesale, level2SubCategories: level3SubCategories[49].subcategories },
+  ]  },
+  { route: "jobs", text: jobs, icon: Business,
+  subCategories: 
+  [
+    { subCategoryRoute: "administrative-jobs", subCategoryText: level2PersianTexts["administrative-jobs"], level2SubCategories: level3SubCategories[50].subcategories },
+    { subCategoryRoute: "janitorial-jobs", subCategoryText: level2PersianTexts["janitorial-jobs"], level2SubCategories: level3SubCategories[51].subcategories },
+    { subCategoryRoute: "architect-jobs", subCategoryText: level2PersianTexts["architect-jobs"], level2SubCategories: level3SubCategories[52].subcategories },
+    { subCategoryRoute: "service-jobs", subCategoryText: level2PersianTexts["service-jobs"], level2SubCategories: level3SubCategories[53].subcategories },
+    { subCategoryRoute: "it-computer-jobs", subCategoryText: level2PersianTexts["it-computer-jobs"], level2SubCategories: level3SubCategories[54].subcategories },
+    { subCategoryRoute: "finance-legal-jobs", subCategoryText: level2PersianTexts["finance-legal-jobs"], level2SubCategories: level3SubCategories[55].subcategories },
+    { subCategoryRoute: "marketing-jobs", subCategoryText: level2PersianTexts["marketing-jobs"], level2SubCategories: level3SubCategories[56].subcategories },
+    { subCategoryRoute: "technical-jobs", subCategoryText: level2PersianTexts["technical-jobs"], level2SubCategories: level3SubCategories[57].subcategories },
+    { subCategoryRoute: "teaching-jobs", subCategoryText: level2PersianTexts["teaching-jobs"], level2SubCategories: level3SubCategories[58].subcategories },
+    { subCategoryRoute: "transport-delivery-jobs", subCategoryText: level2PersianTexts["transport-delivery-jobs"], level2SubCategories: level3SubCategories[59].subcategories },
+    { subCategoryRoute: "health-beauty-jobs", subCategoryText: level2PersianTexts["health-beauty-jobs"], level2SubCategories: level3SubCategories[60].subcategories },
+    { subCategoryRoute: "art-media-jobs", subCategoryText: level2PersianTexts["art-media-jobs"], level2SubCategories: level3SubCategories[61].subcategories },
+  ]  },
+]
+
+
+
+
+
+// export const level2SubCategories = [
+//   { route: "real-estate", 
+//     subCategories: 
+//       {
+//         buyResidential: { subCategoryRoute: "buy-residential", subCategoryText: level2PersianTexts["buy-residential"] },
+//         rentResidential: { subCategoryRoute: "rent-residential", subCategoryText: level2PersianTexts["rent-residential"] },
+//         buyCommercialProperty: { subCategoryRoute: "buy-commercial-property", subCategoryText: level2PersianTexts["buy-commercial-property"] },
+//         rentCommercialProperty: { subCategoryRoute: "rent-commercial-property", subCategoryText: level2PersianTexts["rent-commercial-property"] },
+//         rentTemporary: { subCategoryRoute: "rent-temporary", subCategoryText: level2PersianTexts["rent-temporary"] },
+//         realEstateServices: { subCategoryRoute: "real-estate-services", subCategoryText: level2PersianTexts["real-estate-services"] },
+//       }
+//   },
+//   {
+//     route: "vehicles",
+//     subCategories: 
+//       {
+//         auto: { subCategoryRoute: "auto", subCategoryText: level2PersianTexts.auto },
+//         carAccessories: { subCategoryRoute: "car-accessories", subCategoryText: level2PersianTexts["car-accessories"] },
+//         motorcycles: { subCategoryRoute: "motorcycles", subCategoryText: level2PersianTexts.motorcycles },
+//         boat: { subCategoryRoute: "boat", subCategoryText: level2PersianTexts.boat },
+//       }
+//   },
+//   {
+//     route: "electronic-devices",
+//     subCategories: 
+//     {
+//       mobileTablet: { subCategoryRoute: "mobile-tablet", subCategoryText: level2PersianTexts["mobile-tablet"] },
+//       computers: { subCategoryRoute: "computers", subCategoryText: level2PersianTexts.computers },
+//       gameConsoles: { subCategoryRoute: "game-consoles", subCategoryText: level2PersianTexts["game-consoles"] },
+//       videoAudioDevice: { subCategoryRoute: "video-audio-device", subCategoryText: level2PersianTexts["video-audio-device"] },
+//       telephone: { subCategoryRoute: "telephone", subCategoryText: level2PersianTexts.telephone },
+//     }
+//   },
+//   {
+//     route: "home-and-kitchen",
+//     subCategories: 
+//     {
+//       homeDecorFurniture: { subCategoryRoute: "home-decor-furniture", subCategoryText: level2PersianTexts["home-decor-furniture"] },
+//       kitchenAppliances: { subCategoryRoute: "kitchen-appliances", subCategoryText: level2PersianTexts["kitchen-appliances"] },
+//       homeAppliances: { subCategoryRoute: "home-appliances", subCategoryText: level2PersianTexts["home-appliances"] },
+//       buildingGarden: { subCategoryRoute: "building-garden", subCategoryText: level2PersianTexts["building-garden"] },
+//     }
+//   },
+//   {
+//     route: "services",
+//     subCategories: 
+//     {
+//       vehiclesServices: { subCategoryRoute: "vehicles-services", subCategoryText: level2PersianTexts["vehicles-services"] },
+//       cateringServices: { subCategoryRoute: "catering-services", subCategoryText: level2PersianTexts["catering-services"] },
+//       technologyServices: { subCategoryRoute: "technology-services", subCategoryText: level2PersianTexts["technology-services"] },
+//       financialServices: { subCategoryRoute: "financial-services", subCategoryText: level2PersianTexts["financial-services"] },
+//       transportLogisticServices: { subCategoryRoute: "transport-logistic-services", subCategoryText: level2PersianTexts["transport-logistic-services"] },
+//       craftSkillServices: { subCategoryRoute: "craft-skill-services", subCategoryText: level2PersianTexts["craft-skill-services"] },
+//       beautyServices: { subCategoryRoute: "beauty-services", subCategoryText: level2PersianTexts["beauty-services"] },
+//       entertainingServices: { subCategoryRoute: "entertaining-services", subCategoryText: level2PersianTexts["entertaining-services"] },
+//       cleaningServices: { subCategoryRoute: "cleaning-services", subCategoryText: level2PersianTexts["cleaning-services"] },
+//       gardeningServices: { subCategoryRoute: "gardening-services", subCategoryText: level2PersianTexts["gardening-services"] },
+//       teachingServices: { subCategoryRoute: "teaching-services", subCategoryText: level2PersianTexts["teaching-services"] },
+//     }
+//   },
+//   {
+//     route: "personal-goods",
+//     subCategories: 
+//     {
+//       apparel: { subCategoryRoute: "apparel", subCategoryText: level2PersianTexts.apparel },
+//       accessories: { subCategoryRoute: "accessories", subCategoryText: level2PersianTexts.accessories },
+//       beautyAndPersonalCare: { subCategoryRoute: "beauty-and-personal-care", subCategoryText: level2PersianTexts["beauty-and-personal-care"] },
+//       childApparel: { subCategoryRoute: "child-apparel", subCategoryText: level2PersianTexts["child-apparel"] },
+//       childProducts: { subCategoryRoute: "child-products", subCategoryText: level2PersianTexts["child-products"] },
+//       stationery: { subCategoryRoute: "stationery", subCategoryText: level2PersianTexts.stationery },
+//     }
+//   },
+//   {
+//     route: "entertainment",
+//     subCategories: 
+//     {
+//       ticket: { subCategoryRoute: "ticket", subCategoryText: level2PersianTexts.ticket },
+//       tours: { subCategoryRoute: "tours", subCategoryText: level2PersianTexts.tours },
+//       publication: { subCategoryRoute: "publication", subCategoryText: level2PersianTexts.publication },
+//       bikeSkateScooter: { subCategoryRoute: "bike-skate-scooter", subCategoryText: level2PersianTexts["bike-skate-scooter"] },
+//       petsAnimals: { subCategoryRoute: "pets-animals", subCategoryText: level2PersianTexts["pets-animals"] },
+//       collecting: { subCategoryRoute: "collecting", subCategoryText: level2PersianTexts.collecting },
+//       musicalInstruments: { subCategoryRoute: "musical-instruments", subCategoryText: level2PersianTexts["musical-instruments"] },
+//       sportEntertainment: { subCategoryRoute: "sport-entertainment", subCategoryText: level2PersianTexts["sport-entertainment"] },
+//       gameAndToys: { subCategoryRoute: "game-and-toys", subCategoryText: level2PersianTexts["game-and-toys"] },
+
+//     }
+//   },
+//   {
+//     route: "social-services",
+//     subCategories:
+//       {
+//         event: { subCategoryRoute: "event", subCategoryText: level2PersianTexts.event },
+//         voluntary: { subCategoryRoute: "voluntary", subCategoryText: level2PersianTexts.voluntary },
+//         missing: { subCategoryRoute: "missing", subCategoryText: level2PersianTexts.missing },
+//       }
+//   },
+//   {
+//     route: "businesses",
+//     subCategories: 
+//       {
+//         businessEquipment: { subCategoryRoute: "business-equipment", subCategoryText: level2PersianTexts["business-equipment"] },
+//         wholesale: { subCategoryRoute: "wholesale", subCategoryText: level2PersianTexts.wholesale },
+//       }
+//   },
+//   {
+//     route: "jobs",
+//     subCategories: 
+//       {
+//         administrativeJobs: { subCategoryRoute: "administrative-jobs", subCategoryText: level2PersianTexts["administrative-jobs"] },
+//         janitorialJobs: { subCategoryRoute: "janitorial-jobs", subCategoryText: level2PersianTexts["janitorial-jobs"] },
+//         architectJobs: { subCategoryRoute: "architect-jobs", subCategoryText: level2PersianTexts["architect-jobs"] },
+//         serviceJobs: { subCategoryRoute: "service-jobs", subCategoryText: level2PersianTexts["service-jobs"] },
+//         itComputerJobs: { subCategoryRoute: "it-computer-jobs", subCategoryText: level2PersianTexts["it-computer-jobs"] },
+//         financeLegalJobs: { subCategoryRoute: "finance-legal-jobs", subCategoryText: level2PersianTexts["finance-legal-jobs"] },
+//         marketingJobs: { subCategoryRoute: "marketing-jobs", subCategoryText: level2PersianTexts["marketing-jobs"] },
+//         technicalJobs: { subCategoryRoute: "technical-jobs", subCategoryText: level2PersianTexts["technical-jobs"] },
+//         teachingJobs: { subCategoryRoute: "teaching-jobs", subCategoryText: level2PersianTexts["teaching-jobs"] },
+//         transportDeliveryJobs: { subCategoryRoute: "transport-delivery-jobs", subCategoryText: level2PersianTexts["transport-delivery-jobs"] },
+//         healthBeautyJobs: { subCategoryRoute: "health-beauty-jobs", subCategoryText: level2PersianTexts["health-beauty-jobs"] },
+//         artMediaJobs: { subCategoryRoute: "art-media-jobs", subCategoryText: level2PersianTexts["art-media-jobs"] },
+//       }
+//   },
+// ]
+
+
+

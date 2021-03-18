@@ -1,8 +1,6 @@
 import React from 'react'
 import { Route, Switch, Redirect } from "react-router-dom"
 import TopLevelSidebar from './TopLevelSidebar'
-import Level2Sidebar from "./Level2Sidebar"
-
 
 const Sidebar = () => {
   
@@ -14,6 +12,7 @@ const Sidebar = () => {
         
 
         <Switch>
+          <Route exact path="/tehran/:category/:district" component={TopLevelSidebar} />
           <Route exact path="/tehran/:category" component={TopLevelSidebar} />
           <Route exact path="/tehran" component={TopLevelSidebar} />
           <Route exact path="/" render={() => <Redirect to="/tehran" />} />

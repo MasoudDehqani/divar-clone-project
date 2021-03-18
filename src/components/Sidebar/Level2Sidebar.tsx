@@ -1,49 +1,49 @@
 import React, { useContext } from "react";
-import { Box, Link, List, ListItem } from "@material-ui/core";
-
-import { NavLink } from "react-router-dom";
+import { Box, List } from "@material-ui/core";
 import { DivarContext } from "../context/divarContext";
 import Level3Sidebar from "./Level3Sidebar";
 import SideItem from "./SideItem";
 
 interface SubCategoriesType {
   subCategoryRoute: string;
-  subCategoryText: string
+  subCategoryText: string;
+  level2SubCategories: any
 }
 
 const Level2Sidebar = ({ subCategories } : { subCategories: SubCategoriesType[] }) => {
 
-  const context = useContext(DivarContext);
+  const { routes, city } = useContext(DivarContext);
 
   return (
     <List>
-      <Box mr={7}>
-        {subCategories.map(({ subCategoryRoute, subCategoryText } : { subCategoryRoute: string; subCategoryText: string}) => {
-          if (subCategoryRoute === context.routes.level2) {
+      <Box ml={7}>
+        {subCategories.map(({ subCategoryRoute, subCategoryText, level2SubCategories }, index) => {
+          if (subCategoryRoute === routes.level2) {
             return (
               <>
                 <SideItem
-                  onClick={() => { context.routes.level2 = subCategoryRoute }}
-                  linkToGo={`/tehran/${subCategoryRoute}`}
+                  onClick={() => { routes.level2 = subCategoryRoute }}
+                  linkToGo={`/${city}/${subCategoryRoute}`}
                   text={subCategoryText}
-                  style={{ color: context.routes.level2 === subCategoryRoute ? "black" : "" }}
+                  style={{ color: routes.level2 === subCategoryRoute ? "black" : "" }}
                 />
 
-                <Level3Sidebar />
+                <Level3Sidebar level2Subcategories={level2SubCategories} />
 
               </>
             );
           }
 
-          if (!context.routes.level2) {
+          if (!routes.level2) {
             return (
               <SideItem
-                  onClick={() => { context.routes.level2 = subCategoryRoute }}
-                  linkToGo={`/tehran/${subCategoryRoute}`}
+                  onClick={() => { routes.level2 = subCategoryRoute }}
+                  linkToGo={`/${city}/${subCategoryRoute}`}
                   text={subCategoryText}
               />
             );
           }
+          return undefined
         }
       )}
     </Box>

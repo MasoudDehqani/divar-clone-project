@@ -1,33 +1,29 @@
 import React, { useContext } from "react";
-import { level3SubCategories } from "./dataStructured";
 import { DivarContext } from "../context/divarContext";
-import { Box, Link, ListItem } from "@material-ui/core";
-import { NavLink } from "react-router-dom";
+import { Box } from "@material-ui/core";
 import SideItem from "./SideItem";
 
-const Level3Sidebar = () => {
-  const context = useContext(DivarContext);
+interface PropsType {
+  subcategoryRoute: string;
+  subcategoryText: string
+}
+
+const Level3Sidebar = ({level2Subcategories} : {level2Subcategories: PropsType[]}) => {
+  const { routes, city } = useContext(DivarContext);
 
   return (
-    <div>
-      {level3SubCategories.map(({ route, subcategories }) => {
-        if (route === context.routes.level2) {
-          return subcategories.map(({ subcategoryRoute, subcategoryText }) => {
-            return (
-              <Box mr={4} key={subcategoryText}>
-                <SideItem
-                  onClick={() => { context.routes.level3 = subcategoryRoute }}
-                  linkToGo={`/tehran/${subcategoryRoute}`}
-                  text={subcategoryText}
-                  actStyle={{ color: "red" }}
-                />
-              </Box>
-            );
-          });
-        }
-        return undefined;
+    <Box ml={4} >
+      {level2Subcategories.map(({ subcategoryRoute, subcategoryText }) => {
+        return (
+          <SideItem
+            onClick={() => { routes.level3 = subcategoryRoute }}
+            linkToGo={`/${city}/${subcategoryRoute}`}
+            text={subcategoryText}
+            actStyle={{ color: "red" }}
+          />
+        );
       })}
-    </div>
+    </Box>
   );
 };
 
