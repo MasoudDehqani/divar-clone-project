@@ -21,6 +21,8 @@ const DivarContextProvider = ({ children } : { children: React.ReactChild }) => 
   console.log(pathname)
 
   const { data, routes, districts } = usePathname(pathname, city)
+
+  console.log(data)
   
   return <DivarContext.Provider value={{ data, routes, city, districts }}>{children}</DivarContext.Provider>
 }
