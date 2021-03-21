@@ -31,7 +31,7 @@ export const Header = () => {
       >
         همه آگهی‌ها
       </Button>
-      <TextField style={{width: "400px"}} id="outlined-basic" label="Outlined" variant="outlined" />
+      <TextField style={{width: "500px"}} id="outlined-basic" label="Outlined" variant="outlined" />
       {menuOpen && 
         <ClickAwayListener onClickAway={() => setMenuOpen(false)}>
           <div onClick={() => setMenuOpen(false)}>
