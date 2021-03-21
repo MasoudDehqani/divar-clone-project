@@ -40,13 +40,16 @@ function MenuItemsPaper() {
           </Link>
       ))}
     </Paper>
-    <Paper style={{padding: "10px", display: !menuItemOpen.isOpen ? "none" : "flex", width: "600px", flexDirection: "column", flexWrap: 'wrap', fontSize: "0.9rem"}}>
+    <Paper style={{padding: "10px", display: !menuItemOpen.isOpen ? "none" : "flex", width: "550px", flexDirection: "column", flexWrap: 'wrap', fontSize: "0.9rem"}}>
     {allCategories.children.map(category => {
       if (category.id === menuItemOpen.id) {
-        return category.children.map(subcategory =>
+        return category.children.map((subcategory, index, array) =>
           <Box width="fit-content" height="fit-content" display='flex' flexDirection="column" mb={2} mr={1} flexWrap="wrap">
             <Link color="textPrimary" component={RouterLink} underline="none" to={`/${city}/${subcategory.slug}`}>
-              <span style={{fontWeight: 900}}>{subcategory.name}</span>
+              {index === array.indexOf(array[array.length - 1]) ? 
+              <span style={{color: 'red', position: "absolute", bottom: "15px", left: "15px"}}>{subcategory.name}</span> :
+              <span>{subcategory.name}</span>}
+              
             </Link>
             {subcategory.children.map(subcategoryLevel3 =>
               <Link color="textSecondary" component={RouterLink} underline="none" to={`/${city}/${subcategoryLevel3.slug}`}>
