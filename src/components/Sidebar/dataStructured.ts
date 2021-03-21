@@ -935,7 +935,7 @@ export const topLevelRoutesTitlesIcons = [
   ]  },
 ]
 
-const allCategories = {
+export const allCategories = {
   "name": "همهٔ آگهی‌ها",
   "icon": "",
   "id": 0,
@@ -1387,7 +1387,7 @@ const allCategories = {
                           "name": "سواری",
                           "icon": "",
                           "id": 230,
-                          "slug": "light",
+                          "slug": "car",
                           "second_slug": "ماشین-سواری,سواری",
                           "children": [],
                           "parent": "cars",

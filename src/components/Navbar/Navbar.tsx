@@ -19,7 +19,7 @@ function Navbar() {
 
   return (
     <Container>
-      <AppBar style={{backgroundColor: 'white', boxShadow: '0 0.2px 10px 1px rgba(0,0,0,0.1)', borderBottom: '1px solid rgba(0,0,0,0.1)'}}>
+      <AppBar style={{backgroundColor: 'white', boxShadow: '0 0.1px 10px 0.2px rgba(0,0,0,0.1)', borderBottom: '1px solid rgba(0,0,0,0.1)'}}>
         
       
 
