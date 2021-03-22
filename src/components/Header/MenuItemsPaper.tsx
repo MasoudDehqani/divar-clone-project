@@ -5,6 +5,7 @@ import { Box, Grid, Link, makeStyles } from '@material-ui/core'
 import ArrowLeft from "@material-ui/icons/ArrowLeft"
 import {Link as RouterLink} from "react-router-dom"
 import { DivarContext } from '../context/divarContext'
+import MenuItemsLevel2 from './MenuItemsLevel2'
 
 const useStyle = makeStyles({
   root: {
@@ -26,7 +27,7 @@ function MenuItemsPaper() {
   const classes = useStyle()
 
   return (
-    <Box display="flex" style={{position: "absolute"}} height="550px">
+    <Box display="flex" style={{position: "absolute", zIndex: 10}} height="550px" >
     <Paper style={{padding: "10px", display: 'flex', flexDirection: 'column', width: 200}}>
       <Link component={RouterLink} color="textPrimary" underline="none" to={`/${city}`}>
         <span onMouseOver={() => setMenuItemOpen({id: -1, isOpen: false})} style={{marginBottom: "10px"}}>همه آگهی‌ها</span>  
@@ -43,21 +44,7 @@ function MenuItemsPaper() {
     <Paper style={{padding: "10px", display: !menuItemOpen.isOpen ? "none" : "flex", width: "550px", flexDirection: "column", flexWrap: 'wrap', fontSize: "0.9rem"}}>
     {allCategories.children.map(category => {
       if (category.id === menuItemOpen.id) {
-        return category.children.map((subcategory, index, array) =>
-          <Box width="fit-content" height="fit-content" display='flex' flexDirection="column" mb={2} mr={1} flexWrap="wrap">
-            <Link color="textPrimary" component={RouterLink} underline="none" to={`/${city}/${subcategory.slug}`}>
-              {index === array.indexOf(array[array.length - 1]) ? 
-              <span style={{color: 'red', position: "absolute", bottom: "15px", left: "15px"}}>{subcategory.name}</span> :
-              <span>{subcategory.name}</span>}
-              
-            </Link>
-            {subcategory.children.map(subcategoryLevel3 =>
-              <Link color="textSecondary" component={RouterLink} underline="none" to={`/${city}/${subcategoryLevel3.slug}`}>
-                <span style={{fontSize: "0.8rem"}}>{subcategoryLevel3.name}</span>  
-              </Link> 
-            )} 
-          </Box>
-        )
+        return <MenuItemsLevel2 itemsToRender={category.children} />
       }
     }
     )}

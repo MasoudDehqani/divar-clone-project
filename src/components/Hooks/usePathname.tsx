@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from "react"
 import fetchHandle from "../outsourcing/fetchHandle"
 import setRequiredData from "../outsourcing/setRequiredData"
 
-const usePathname = (pathname: string, city: string) => {
+const usePathname = (pathname: string, city: string, query: string | null) => {
 
   const [data, setData] = useState({})
 
@@ -11,12 +11,12 @@ const usePathname = (pathname: string, city: string) => {
   
   const getSetData = useCallback(async (route = `/${city}`) => {
 
-    const response = await fetchHandle("https://api.divar.ir/v8/web-search", pathname, city)
+    const response = await fetchHandle("https://api.divar.ir/v8/web-search", pathname, city, query)
 
     setRequiredData(response, routes, districts, city)
     setData(response)
 
-  }, [city, districts, pathname, routes])
+  }, [city, districts, pathname, query, routes])
   
   useEffect( () => {
     getSetData(pathname)

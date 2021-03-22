@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react'
-import { useLocation } from "react-router-dom"
+import { useLocation, useRouteMatch } from "react-router-dom"
 import usePathname from '../Hooks/usePathname'
+import useQuery from '../Hooks/useQuery'
 
 interface ContextType {
   data: any;
@@ -18,9 +19,11 @@ export const DivarContext = createContext<ContextType>({data: [], routes, city, 
 const DivarContextProvider = ({ children } : { children: React.ReactChild }) => {
 
   const { pathname } = useLocation()
+  const query = useQuery()
+  
   console.log(pathname)
-
-  const { data, routes, districts } = usePathname(pathname, city)
+  
+  const { data, routes, districts } = usePathname(pathname, city, query.get("q"))
 
   console.log(data)
   
