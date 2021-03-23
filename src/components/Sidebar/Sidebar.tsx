@@ -8,7 +8,7 @@ const Sidebar = () => {
   const { city } = useContext(DivarContext)
   
   return (
-    <div style={{width: '300px', marginTop: "100px", position: "sticky", padding: "0 25px"}}>
+    <div style={{width: '300px', height: "fit-content", marginTop: "100px", position: "sticky", padding: "0 25px"}}>
 
         <h3>دسته بندی‌ها</h3>
 

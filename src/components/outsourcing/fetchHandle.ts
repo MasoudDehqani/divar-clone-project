@@ -1,11 +1,11 @@
 
-const fetchHandle = async (url: string, route: string, city: string, query: string | null) => {
+const fetchHandle = async (apiUrl: string, route: string, city: string, searchQuery: string | null) => {
   if (route === "/") route = `/${city}`
 
-  console.log(`${url}${route}${query ? `?q=${query}` : ""}`)
+  console.log(`${apiUrl}${route}${searchQuery ? `?q=${searchQuery}` : ""}`)
 
   try {
-    const responsePromise = (await fetch(`${url}${route}${query ? `?q=${query}` : ""}`)).json().catch(() => console.log("wrong url"))
+    const responsePromise = (await fetch(`${apiUrl}${route}${searchQuery ? `?q=${searchQuery}` : ""}`)).json().catch(() => console.log("wrong url"))
     return responsePromise
   } catch(err) {
     console.log(err)

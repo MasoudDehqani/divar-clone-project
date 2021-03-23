@@ -8,6 +8,7 @@ import DivarContextProvider, { DivarContext } from "../context/divarContext"
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import CitySelection from '../CitySelection/CitySelection'
 import { Box } from '@material-ui/core'
+import Widgets from "../Widgets/Widgets"
 
 const theme = createMuiTheme({
   direction: 'rtl',
@@ -28,7 +29,10 @@ function Divar() {
           <Navbar />
           <Box display="flex">
             <Sidebar />
-            <Header />
+            <Box display="flex" flexDirection="column">
+              <Header />
+              <Widgets />
+            </Box>
           </Box>
         </ThemeProvider>
       </DivarContextProvider>

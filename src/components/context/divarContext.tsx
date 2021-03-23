@@ -1,5 +1,5 @@
-import React, { createContext, useEffect, useState } from 'react'
-import { useLocation, useRouteMatch } from "react-router-dom"
+import React, { createContext } from 'react'
+import { useLocation } from "react-router-dom"
 import usePathname from '../Hooks/usePathname'
 import useQuery from '../Hooks/useQuery'
 

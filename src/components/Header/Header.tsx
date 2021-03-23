@@ -8,7 +8,6 @@ import MenuItemsPaper from './MenuItemsPaper';
 import SuggestionBar from './SuggestionBar';
 import { DivarContext } from '../context/divarContext';
 import { useHistory, useLocation } from 'react-router';
-import { withRouter } from "react-router-dom"
 import useQuery from "../Hooks/useQuery"
 
 const useStyles = makeStyles((theme) => ({
@@ -22,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 export const Header = () => {
 
   const history = useHistory()
-  const {pathname} = useLocation()
+  const { pathname } = useLocation()
   const query = useQuery()
 
   const [menuOpen, setMenuOpen] = useState(false)
@@ -30,10 +29,6 @@ export const Header = () => {
   const [registeredTextFieldValue, setRegisteredTextFieldValue] = useState('')
 
   const { data } = useContext(DivarContext)
-
-  // useEffect(() => {
-  //   fetch(`https://api.divar.ir/v8/web-search${pathname}?q=${textFieldValue}`)
-  // }, [textFieldValue, pathname])
 
   function handleKeyPress(e: React.KeyboardEvent<HTMLDivElement>) {
     if (e.key === "Enter") {
@@ -67,9 +62,9 @@ export const Header = () => {
           className={classes.button}
           endIcon={<ExpandMore />}
         >
-          همه آگهی‌ها
+          {data.title}
         </Button>
-        <TextField onKeyDown={(e) => handleKeyPress(e)} value={textFieldValue} placeholder={`جستجو در ${data.title}`} onChange={(e) => setTextFieldValue(e.target.value)} style={{width: "500px", fontFamily: "Vazir"}} id="outlined-basic" variant="outlined" />
+        <TextField onKeyDown={(e) => handleKeyPress(e)} value={textFieldValue} placeholder={`جستجو در ${data?.title}`} onChange={(e) => setTextFieldValue(e.target.value)} style={{width: "500px", fontFamily: "Vazir"}} id="outlined-basic" variant="outlined" />
         {menuOpen && 
           <ClickAwayListener onClickAway={() => setMenuOpen(false)}>
             <div onClick={() => setMenuOpen(false)}>

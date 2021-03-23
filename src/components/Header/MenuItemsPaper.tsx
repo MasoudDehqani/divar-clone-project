@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import Paper from "@material-ui/core/Paper"
 import { allCategories } from "../Sidebar/dataStructured"
-import { Box, Grid, Link, makeStyles } from '@material-ui/core'
+import { Box, Link, makeStyles } from '@material-ui/core'
 import ArrowLeft from "@material-ui/icons/ArrowLeft"
 import {Link as RouterLink} from "react-router-dom"
 import { DivarContext } from '../context/divarContext'
@@ -17,7 +17,7 @@ const useStyle = makeStyles({
 
 function MenuItemsPaper() {
 
-  const { routes, city } = useContext(DivarContext)
+  const { city } = useContext(DivarContext)
 
   const [menuItemOpen, setMenuItemOpen] = useState({
     id: 0,
@@ -46,6 +46,7 @@ function MenuItemsPaper() {
       if (category.id === menuItemOpen.id) {
         return <MenuItemsLevel2 itemsToRender={category.children} />
       }
+      return undefined
     }
     )}
     </Paper>
