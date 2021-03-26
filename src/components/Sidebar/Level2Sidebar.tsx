@@ -3,6 +3,7 @@ import { Box, List } from "@material-ui/core";
 import { DivarContext } from "../context/divarContext";
 import Level3Sidebar from "./Level3Sidebar";
 import SideItem from "./SideItem";
+import { useParams } from "react-router";
 
 interface SubCategoriesType {
   subCategoryRoute: string;
@@ -10,14 +11,19 @@ interface SubCategoriesType {
   level2SubCategories: any
 }
 
-const Level2Sidebar = ({ subCategories } : { subCategories: SubCategoriesType[] }) => {
+const Level2Sidebar = ({ subCategories } : { subCategories?: SubCategoriesType[] }) => {
 
-  const { routes, city } = useContext(DivarContext);
+  const { routes } = useContext(DivarContext);
+  //@ts-ignore
+  const {city} = useParams()
+  console.log(city);
+  
 
   return (
     <List>
       <Box ml={7}>
-        {subCategories.map(({ subCategoryRoute, subCategoryText, level2SubCategories }, index) => {
+        {//@ts-ignore
+        subCategories.map(({ subCategoryRoute, subCategoryText, level2SubCategories }, index) => {
           if (subCategoryRoute === routes.level2) {
             return (
               <>

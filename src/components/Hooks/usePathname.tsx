@@ -19,12 +19,12 @@ const usePathname = (baseUrl: string, pathname: string, city: string) => {
 
     const response = await fetchHandle(completeURL)
 
-    setRequiredData(response, routes, districts, city)
-      
+    setRequiredData(response, routes, districts, response.seo_details.bread_crumbs[response.seo_details.bread_crumbs.length - 2].url)
+    
     setData(response)
+    
 
-
-  }, [completeURL, routes, districts, city])
+  }, [completeURL, routes, districts])
   
   useEffect( () => {
     getSetData()

@@ -4266,20 +4266,29 @@ export const allCategories = {
   }
 }
 
-const allCities = {
+export const allCities = {
   "shouldSelectCity": false,
   "cities": [],
   "topCities": [
-      "tehran",
-      "mashhad",
-      "karaj",
-      "shiraz",
-      "isfahan",
-      "ahvaz",
-      "tabriz",
-      "kermanshah",
-      "qom",
-      "rasht"
+      {title: "تهران", url: "tehran"},
+      {title: "مشهد", url: "mashhad"},
+      {title: "کرج", url: "karaj"},
+      {title: "شیراز", url: "shiraz"},
+      {title: "اصفهان", url: "isfahan"},
+      {title: "اهواز", url: "ahvaz"},
+      {title: "تبریز", url: "tabriz"},
+      {title: "کرمانشاه", url: "kermanshah"},
+      {title: "قم", url: "qom"},
+      {title: "رشت", url: "rasht"},
+    //   "mashhad",
+    //   "karaj",
+    //   "shiraz",
+    //   "isfahan",
+    //   "ahvaz",
+    //   "tabriz",
+    //   "kermanshah",
+    //   "qom",
+    //   "rasht"
   ],
   "places": {},
   "compressedData": [

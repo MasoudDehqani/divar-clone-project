@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AppBar, Toolbar, List, ListItem, Button, Box, Container, Paper, Avatar } from "@material-ui/core"
 import { LocationOnRounded } from "@material-ui/icons"
 // import makeStyles from "@material-ui/core/styles/makeStyles"
@@ -12,15 +12,17 @@ import ClickAwayListener from '@material-ui/core/ClickAwayListener'
 import MobileMenu from './MobileMenu';
 import DesktopNav from './DesktopNav';
 import DivarLogo from './DivarLogo';
+import CitySelectionButton from './CitySelectionButton';
+import CitySelectionModal from '../CitySelection/CitySelectionModal';
 
 function Navbar() {
 
-
+  const [modalOpen, setModalOpen] = useState(false)
 
   return (
     <Container>
+      <CitySelectionModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
       <AppBar style={{backgroundColor: 'white', boxShadow: '0 0.1px 10px 0.2px rgba(0,0,0,0.1)', borderBottom: '1px solid rgba(0,0,0,0.1)'}}>
-        
       
 
         
@@ -28,10 +30,7 @@ function Navbar() {
           <Box display="flex" width="100%" justifyContent="space-between" alignItems="center">
             <Box display="flex" alignItems="center">
               <DivarLogo />
-              <Button>
-                <LocationOnRounded style={{color: "rgba(0,0,0,0.4)", verticalAlign: 'middle'}} />
-                <span style={{color: 'rgba(0,0,0,0.4)', fontFamily: "Vazir", fontStyle: "normal", fontWeight: 900, verticalAlign: 'middle'}}>تهران</span>
-              </Button>
+              <CitySelectionButton onClick={() => setModalOpen(true)} />
             </Box>
 
             <Box display="flex" alignItems="center">

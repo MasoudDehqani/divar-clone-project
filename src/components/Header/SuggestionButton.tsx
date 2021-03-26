@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
 import Button from "@material-ui/core/Button"
 import Link from "@material-ui/core/Link"
-import { Link as RouterLink } from "react-router-dom"
-import { DivarContext } from '../context/divarContext'
+import { Link as RouterLink, useParams } from "react-router-dom"
 
 function SuggestionButton({text, categoryName} : {text: string, categoryName: string}) {
 
-  const { city } = useContext(DivarContext)
+  //@ts-ignore
+  const {city} = useParams()
+  console.log(city);
 
   return (
     <Link underline="none" component={RouterLink} to={`/${city}/${categoryName}`}>

@@ -6,10 +6,16 @@ import { DivarContext } from "../context/divarContext";
 import { topLevelRoutesTitlesIcons } from "./dataStructured";
 import Level2Sidebar from "./Level2Sidebar";
 import ReturnToAll from "./ReturnToAll";
+import { usePagination } from "@material-ui/lab";
+import { useParams } from "react-router";
 
 const TopLevelSidebar = () => {
 
-  const { routes, city } = useContext(DivarContext);
+  const { routes } = useContext(DivarContext);
+  //@ts-ignore
+  const {city} = useParams()
+  console.log(city);
+  
 
   return (
     <List>

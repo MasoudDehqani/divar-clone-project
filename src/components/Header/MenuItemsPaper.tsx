@@ -3,8 +3,7 @@ import Paper from "@material-ui/core/Paper"
 import { allCategories } from "../Sidebar/dataStructured"
 import { Box, Link, makeStyles } from '@material-ui/core'
 import ArrowLeft from "@material-ui/icons/ArrowLeft"
-import {Link as RouterLink} from "react-router-dom"
-import { DivarContext } from '../context/divarContext'
+import {Link as RouterLink, useParams} from "react-router-dom"
 import MenuItemsLevel2 from './MenuItemsLevel2'
 
 const useStyle = makeStyles({
@@ -17,7 +16,9 @@ const useStyle = makeStyles({
 
 function MenuItemsPaper() {
 
-  const { city } = useContext(DivarContext)
+  //@ts-ignore
+  const {city} = useParams()
+  console.log(city);
 
   const [menuItemOpen, setMenuItemOpen] = useState({
     id: 0,

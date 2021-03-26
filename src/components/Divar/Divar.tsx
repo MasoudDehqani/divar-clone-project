@@ -6,7 +6,7 @@ import { BrowserRouter as Router } from "react-router-dom"
 import DivarContextProvider, { DivarContext } from "../context/divarContext"
 
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import CitySelection from '../CitySelection/CitySelection'
+import CitySelectionPage from '../CitySelection/CitySelectionPage'
 import { Box } from '@material-ui/core'
 import Widgets from "../Widgets/Widgets"
 
@@ -16,11 +16,9 @@ const theme = createMuiTheme({
 
 function Divar() {
 
-  const { city } = useContext(DivarContext)
-
-  if (!city) {
-    return <CitySelection />
-  }
+  // if (!city) {
+  //   return <CitySelectionPage />
+  // }
 
   return (
     <Router>

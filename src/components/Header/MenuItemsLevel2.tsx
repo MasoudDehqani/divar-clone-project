@@ -1,11 +1,12 @@
 import { Box, Link } from '@material-ui/core'
-import { Link as RouterLink } from "react-router-dom"
+import { Link as RouterLink, useParams } from "react-router-dom"
 import React, { useContext } from 'react'
-import { DivarContext } from '../context/divarContext'
 
 function MenuItemsLevel2({itemsToRender} : {itemsToRender: any}) {
 
-  const { city } = useContext(DivarContext)
+  //@ts-ignore
+  const {city} = useParams()
+  console.log(city);
 
   return (
     itemsToRender.map((subcategory: any, index: number, array: any) =>

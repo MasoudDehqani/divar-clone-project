@@ -6,9 +6,9 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import { ClickAwayListener, TextField } from '@material-ui/core';
 import MenuItemsPaper from './MenuItemsPaper';
 import SuggestionBar from './SuggestionBar';
-import { DivarContext } from '../context/divarContext';
 import { useHistory, useLocation } from 'react-router';
 import useQuery from "../Hooks/useQuery"
+import { DivarContext } from '../context/divarContext';
 
 const useStyles = makeStyles((theme) => ({
   button: {
