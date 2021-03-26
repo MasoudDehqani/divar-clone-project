@@ -16,6 +16,7 @@ const Level3Sidebar = ({level2Subcategories} : {level2Subcategories: PropsType[]
       {level2Subcategories.map(({ subcategoryRoute, subcategoryText }) => {
         return (
           <SideItem
+            key={subcategoryText}
             onClick={() => { routes.level3 = subcategoryRoute }}
             linkToGo={`/${city}/${subcategoryRoute}`}
             text={subcategoryText}

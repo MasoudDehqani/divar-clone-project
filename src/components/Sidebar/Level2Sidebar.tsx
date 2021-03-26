@@ -22,6 +22,7 @@ const Level2Sidebar = ({ subCategories } : { subCategories: SubCategoriesType[] 
             return (
               <>
                 <SideItem
+                  key={index}
                   onClick={() => { routes.level2 = subCategoryRoute }}
                   linkToGo={`/${city}/${subCategoryRoute}`}
                   text={subCategoryText}
@@ -37,6 +38,7 @@ const Level2Sidebar = ({ subCategories } : { subCategories: SubCategoriesType[] 
           if (!routes.level2) {
             return (
               <SideItem
+                  key={index}
                   onClick={() => { routes.level2 = subCategoryRoute }}
                   linkToGo={`/${city}/${subCategoryRoute}`}
                   text={subCategoryText}

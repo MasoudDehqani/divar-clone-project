@@ -6,18 +6,11 @@ import { DivarContext } from "../context/divarContext";
 import { topLevelRoutesTitlesIcons } from "./dataStructured";
 import Level2Sidebar from "./Level2Sidebar";
 import ReturnToAll from "./ReturnToAll";
-// import FilterButton from "./filters/FilterButton";
-// import FilterSelect from "./filters/FilterSelect";
-// import FilterSwitch from "./filters/FilterSwitch";
 
 const TopLevelSidebar = () => {
+
   const { routes, city } = useContext(DivarContext);
-  // console.log("TopLevelSidebar")
 
-  // const { url } = useRouteMatch()
-  // context.setUrl(url)
-
-  console.log(routes)
   return (
     <List>
       {topLevelRoutesTitlesIcons.map(({ route, text, icon, subCategories }, index) => {
@@ -28,6 +21,7 @@ const TopLevelSidebar = () => {
               <ReturnToAll />
 
               <SideItem
+                key={index}
                 onClick={() => {
                   routes.topLevel = route;
                   routes.level2 = "";
@@ -48,6 +42,7 @@ const TopLevelSidebar = () => {
         if (!routes.topLevel) {
           return (
             <SideItem
+              key={index}
               onClick={() => {
                 routes.topLevel = route;
                 routes.level2 = "";
@@ -62,12 +57,6 @@ const TopLevelSidebar = () => {
         return undefined
       })}
       
-      {/* <FilterButton filterText="دسته" />
-
-      <FilterSelect />
-
-      <FilterSwitch /> */}
-
     </List>
   );
 };

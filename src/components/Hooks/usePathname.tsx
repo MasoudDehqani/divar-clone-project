@@ -1,28 +1,36 @@
 import { useCallback, useEffect, useMemo, useState } from "react"
+import urlHandle from "../outsourcing/urlHandle"
 import fetchHandle from "../outsourcing/fetchHandle"
 import setRequiredData from "../outsourcing/setRequiredData"
+import useQueries from "./useQueries"
 
-const usePathname = (pathname: string, city: string, searchQuery: string | null) => {
+const usePathname = (baseUrl: string, pathname: string, city: string) => {
 
   const [data, setData] = useState({})
+  let [nextPageQuery, setNextPageQuery] = useState("")
+  const queries = useQueries()
+  const url = urlHandle(baseUrl, pathname, city)
+  let completeURL = url + queries
 
   let routes = useMemo(() => ({topLevel: "", level2: "", level3: ""}), [])
   let districts: string[] = useMemo(() => [], [])
   
-  const getSetData = useCallback(async (route = `/${city}`) => {
+  const getSetData = useCallback(async () => {
 
-    const response = await fetchHandle("https://api.divar.ir/v8/web-search", pathname, city, searchQuery)
+    const response = await fetchHandle(completeURL)
 
     setRequiredData(response, routes, districts, city)
+      
     setData(response)
 
-  }, [city, districts, pathname, searchQuery, routes])
+
+  }, [completeURL, routes, districts, city])
   
   useEffect( () => {
-    getSetData(pathname)
-  }, [getSetData, pathname])
+    getSetData()
+  }, [getSetData, url])
 
-  return { data, routes, districts }
+  return { data, routes, districts, completeURL, nextPageQuery, setNextPageQuery }
 }
 
 

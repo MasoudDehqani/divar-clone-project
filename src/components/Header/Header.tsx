@@ -42,7 +42,6 @@ export const Header = () => {
   }
 
   useEffect(() => {
-    console.log(!!registeredTextFieldValue)
     if (registeredTextFieldValue && pathname !== "/" && textFieldValue) {
       history.push(`${pathname}?q=${registeredTextFieldValue}`)
     }
