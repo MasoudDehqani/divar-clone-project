@@ -12,12 +12,7 @@ const Sidebar = () => {
 
         
 
-        <Switch>
-          {/* <Route exact path="/tehran/:category/:district" component={TopLevelSidebar} /> */}
-          <Route exact path="/:city/:category" component={TopLevelSidebar} />
-          <Route exact path="/:city" component={TopLevelSidebar} />
-          <Route exact path="/" render={() => <Redirect to="/tehran" />} />
-        </Switch>
+      <TopLevelSidebar />
     </div>
   )
 }

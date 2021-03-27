@@ -83,7 +83,7 @@ const CitySelectionModal = ({ modalOpen, setModalOpen } : {modalOpen: boolean, s
               {allCities.topCities.map((city: any) => 
                 <Grid item>
                   <Link component={RouterLink} to={`/${city.url}`}>
-                    <CitySelectionButton text={city.title} />  
+                    <CitySelectionButton onClick={handleClose} text={city.title} />  
                   </Link>
                 </Grid>
               )}

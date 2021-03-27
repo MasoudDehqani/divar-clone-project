@@ -11,7 +11,7 @@ const Widgets = () => {
   return (
     <Grid spacing={2} direction="row" container style={{width: "70vw", height: "2376px", marginTop: "20px"}}>
       {data.widget_list?.map((widget: any) =>
-        <Grid key={widget.data.title} item>
+        <Grid key={widget.data.token} item>
           <Widget widgetData={widget.data} />
         </Grid>
       )}

@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import Navbar from "../Navbar/Navbar"
 import Header from "../Header/Header"
 import Sidebar from "../Sidebar/Sidebar"
-import { BrowserRouter as Router } from "react-router-dom"
+import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom"
 import DivarContextProvider, { DivarContext } from "../context/divarContext"
 
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
@@ -25,13 +25,35 @@ function Divar() {
       <DivarContextProvider>
         <ThemeProvider theme={theme}>
           <Navbar />
-          <Box display="flex">
+          <Switch>
+            {/* <Route exact path="/tehran/:category/:district" component={TopLevelSidebar} /> */}
+            <Route exact path="/:city/:category">
+              <Box display="flex">
+                <Sidebar />
+                <Box display="flex" flexDirection="column">
+                  <Header />
+                  <Widgets />
+                </Box>
+              </Box>
+            </Route>
+            <Route exact path="/:city">
+              <Box display="flex">
+                <Sidebar />
+                <Box display="flex" flexDirection="column">
+                  <Header />
+                  <Widgets />
+                </Box>
+              </Box>
+            </Route>
+            <Route exact path="/" render={() => <Redirect to="/tehran" />} />
+          </Switch>
+          {/* <Box display="flex">
             <Sidebar />
             <Box display="flex" flexDirection="column">
               <Header />
               <Widgets />
             </Box>
-          </Box>
+          </Box> */}
         </ThemeProvider>
       </DivarContextProvider>
     </Router>

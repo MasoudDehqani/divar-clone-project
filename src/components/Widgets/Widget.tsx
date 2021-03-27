@@ -11,7 +11,7 @@ function Widget({widgetData} : {widgetData: any}) {
             <span style={{color: "grey", fontSize: "0.9rem"}}>{widgetData.description}</span>
             <Box color="grey" display="flex">
               {widgetData.red_text && <span style={{color: "red", fontSize: "0.7rem"}}>{widgetData.red_text}</span>}
-              <span style={{color: 'grey', marginRight: "2px", fontSize: "0.7rem"}}>{widgetData.normal_text.length + widgetData.red_text.length > 20 ? `${widgetData.normal_text.substr(0, 22)}...` : widgetData.normal_text}</span>
+              <span style={{color: 'grey', marginRight: "2px", fontSize: "0.7rem"}}>{widgetData.normal_text?.length + widgetData.red_text?.length > 20 ? `${widgetData.normal_text?.substr(0, 22)}...` : widgetData.normal_text}</span>
               {widgetData.has_chat && <ChatOutlined style={{marginRight: "auto"}} />}
             </Box>
           </Box>
