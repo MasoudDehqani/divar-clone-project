@@ -1,8 +1,7 @@
-import React, { createContext, useState } from 'react'
-import { useLocation, useParams } from "react-router-dom"
+import React, { createContext } from 'react'
+import { useLocation } from "react-router-dom"
 import usePathname from '../Hooks/usePathname'
 import initialContextValues, {ContextType} from "./initialContextValues"
-
 
 export const DivarContext = createContext<ContextType>(initialContextValues)
 

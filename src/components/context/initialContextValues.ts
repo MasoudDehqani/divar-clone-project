@@ -14,7 +14,7 @@ let initialContextValues = {
   city : "",
   baseUrl : "https://api.divar.ir/v8/web-search",
   completeURL : "",
-  status: true
+  status: false
 }
 
 export default initialContextValues

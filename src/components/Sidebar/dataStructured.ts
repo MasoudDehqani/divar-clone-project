@@ -6576,3 +6576,16 @@ export const allCities = {
       ]
   ]
 }
+
+export const suggestionBarUrl = [
+  "car",
+  "buy-apartment",
+  "rent-apartment",
+  "mobile-phones",
+  "sofa-armchair",
+  "pets-animals",
+  "personal-goods",
+  "services",
+  "jobs",
+  "tv-projector"
+]

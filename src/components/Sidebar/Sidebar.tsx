@@ -6,7 +6,7 @@ import TopLevelSidebar from './TopLevelSidebar'
 const Sidebar = () => {
   
   return (
-    <div style={{width: '300px', height: "fit-content", marginTop: "100px", position: "sticky", padding: "0 25px"}}>
+    <div style={{width: '260px', height: "fit-content", marginTop: "100px", position: "sticky", padding: "0 15px"}}>
 
         <h3>دسته بندی‌ها</h3>
 

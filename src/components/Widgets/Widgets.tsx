@@ -9,7 +9,7 @@ const Widgets = () => {
   const { data } = useContext(DivarContext)
 
   return (
-    <Grid spacing={2} direction="row" container style={{width: "70vw", height: "2376px", marginTop: "20px"}}>
+    <Grid spacing={2} direction="row" container style={{width: "calc(100vw - 280px)", height: "2000px", marginTop: "20px"}}>
       {data.widget_list?.map((widget: any) =>
         <Grid key={widget.data.token} item>
           <Widget widgetData={widget.data} />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from '@material-ui/styles';
-import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom"
+import { BrowserRouter as Router } from "react-router-dom"
 import './App.css';
 import DivarContextProvider from './components/context/divarContext';
 import Divar from './components/Divar/Divar'

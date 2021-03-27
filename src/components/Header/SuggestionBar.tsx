@@ -8,11 +8,12 @@ const SuggestionBar = () => {
 
   return (
     <div style={{margin: "10px 0"}}>
-      {data.suggestion_list?.map(({displayed_text, value} : {displayed_text: any, value: any}) => 
+      {data.suggestion_list?.map(({displayed_text, value} : {displayed_text: any, value: any}, index: number) => 
         <SuggestionButton
           key={displayed_text} 
           text={displayed_text} 
           categoryName={value.category.value}
+          index={index}
         />)}    
     </div>
   )
