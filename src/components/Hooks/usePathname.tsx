@@ -7,10 +7,12 @@ import useQueries from "./useQueries"
 const usePathname = (baseUrl: string, pathname: string, city: string) => {
 
   const [data, setData] = useState({})
-  let [nextPageQuery, setNextPageQuery] = useState("")
+  const [status, setStatus] = useState(true)
   const queries = useQueries()
   const url = urlHandle(baseUrl, pathname, city)
   let completeURL = url + queries
+  console.log(completeURL);
+  
 
   let routes = useMemo(() => ({topLevel: "", level2: "", level3: ""}), [])
   let districts: string[] = useMemo(() => [], [])
@@ -18,8 +20,12 @@ const usePathname = (baseUrl: string, pathname: string, city: string) => {
   const getSetData = useCallback(async () => {
 
     const response = await fetchHandle(completeURL)
-    console.log()
-    setRequiredData(response, routes, districts, response?.seo_details.bread_crumbs[response?.seo_details.bread_crumbs.length - 2].url)
+
+    if (!response) {
+      setStatus(false)
+      return
+    }
+    setRequiredData(response, routes, districts, response.seo_details.bread_crumbs[response.seo_details.bread_crumbs.length - 2].url)
     
     setData(response)
     
@@ -30,7 +36,7 @@ const usePathname = (baseUrl: string, pathname: string, city: string) => {
     getSetData()
   }, [getSetData, url])
 
-  return { data, routes, districts, completeURL, nextPageQuery, setNextPageQuery }
+  return { data, routes, districts, completeURL, status }
 }
 
 

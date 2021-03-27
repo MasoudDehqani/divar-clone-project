@@ -2,11 +2,11 @@
 const fetchHandle = async (completeURL: string) => {
 
   try {
-    const responsePromise = (await fetch(completeURL)).json().catch(() => console.log("wrong url"))
-    return responsePromise
+    const responsePromise = await fetch(completeURL)
+    if (!responsePromise.ok) return null
+    return responsePromise.json()
   } catch(err) {
-    console.log(err)
-    throw new Error("network connectivity problem")
+    return null
   }
 }
 

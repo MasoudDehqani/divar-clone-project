@@ -1,46 +1,29 @@
 import React, { useContext } from 'react'
 import Navbar from "../Navbar/Navbar"
-import Header from "../Header/Header"
-import Sidebar from "../Sidebar/Sidebar"
-import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom"
-import DivarContextProvider, { DivarContext } from "../context/divarContext"
-
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { Route, Switch } from "react-router-dom"
+import { DivarContext } from "../context/divarContext"
 import CitySelectionPage from '../CitySelection/CitySelectionPage'
-import { Box } from '@material-ui/core'
-import Widgets from "../Widgets/Widgets"
 import Main from '../Main/Main'
 
-const theme = createMuiTheme({
-  direction: 'rtl',
-});
-
-const routes = [
-  {
-    path: "/:city/:category",
-    
-  }
-]
-
 function Divar() {
+  
+  const { status } = useContext(DivarContext)
+  console.log(status)
 
-  // if (!city) {
-  //   return <CitySelectionPage />
-  // }
+  if (!status) {
+    return <h1>مالیدی</h1>
+  }
 
   return (
-    <Router>
-      <DivarContextProvider>
-        <ThemeProvider theme={theme}>
-          <Navbar />
-          <Switch>
-            <Route exact path="/:city/:category" component={Main} />             
-            <Route exact path="/:city" component={Main} />              
-            <Route exact path="/" render={() => <Redirect to="/tehran" />} />
-          </Switch>
-        </ThemeProvider>
-      </DivarContextProvider>
-    </Router>
+    <>
+      <Navbar />
+      <Switch>
+        <Route path="/:city/:category" component={Main} />             
+        <Route path="/:city" component={Main} />              
+        <Route exact path="/" component={CitySelectionPage} />
+        <Route path="*" render={() => <h1>Not Found</h1>} />
+      </Switch>
+    </>
   )
 }
 
