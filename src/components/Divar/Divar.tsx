@@ -9,10 +9,18 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import CitySelectionPage from '../CitySelection/CitySelectionPage'
 import { Box } from '@material-ui/core'
 import Widgets from "../Widgets/Widgets"
+import Main from '../Main/Main'
 
 const theme = createMuiTheme({
   direction: 'rtl',
 });
+
+const routes = [
+  {
+    path: "/:city/:category",
+    
+  }
+]
 
 function Divar() {
 
@@ -26,34 +34,10 @@ function Divar() {
         <ThemeProvider theme={theme}>
           <Navbar />
           <Switch>
-            {/* <Route exact path="/tehran/:category/:district" component={TopLevelSidebar} /> */}
-            <Route exact path="/:city/:category">
-              <Box display="flex">
-                <Sidebar />
-                <Box display="flex" flexDirection="column">
-                  <Header />
-                  <Widgets />
-                </Box>
-              </Box>
-            </Route>
-            <Route exact path="/:city">
-              <Box display="flex">
-                <Sidebar />
-                <Box display="flex" flexDirection="column">
-                  <Header />
-                  <Widgets />
-                </Box>
-              </Box>
-            </Route>
+            <Route exact path="/:city/:category" component={Main} />             
+            <Route exact path="/:city" component={Main} />              
             <Route exact path="/" render={() => <Redirect to="/tehran" />} />
           </Switch>
-          {/* <Box display="flex">
-            <Sidebar />
-            <Box display="flex" flexDirection="column">
-              <Header />
-              <Widgets />
-            </Box>
-          </Box> */}
         </ThemeProvider>
       </DivarContextProvider>
     </Router>
