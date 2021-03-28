@@ -4,15 +4,13 @@ import fetchHandle from "../outsourcing/fetchHandle"
 import setRequiredData from "../outsourcing/setRequiredData"
 import useQueries from "./useQueries"
 
-const usePathname = (baseUrl: string, pathname: string, city: string) => {
+const usePathname = (baseUrl: string, pathname: string, city: string | null) => {
 
   const [data, setData] = useState({})
   const [status, setStatus] = useState(true)
   const queries = useQueries()
   const url = urlHandle(baseUrl, pathname, city)
-  let completeURL = url + queries
-  console.log(completeURL);
-  
+  let completeURL = url + queries  
 
   let routes = useMemo(() => ({topLevel: "", level2: "", level3: ""}), [])
   let districts: string[] = useMemo(() => [], [])

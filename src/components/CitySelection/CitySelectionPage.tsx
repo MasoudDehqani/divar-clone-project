@@ -14,6 +14,10 @@ const CitySelectionPage = () => {
     setModalOpen(false);
   };
 
+  const handleCitySelection = (cityUrl: string) => {
+    localStorage.setItem("city", cityUrl)
+  }
+
   return (
     <div>
       <CitySelectionModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
@@ -23,7 +27,7 @@ const CitySelectionPage = () => {
       <Grid container spacing={2}>
         {allCities.topCities.map((city: any) => 
           <Grid item>
-            <Link component={RouterLink} to={`/${city.url}`}>
+            <Link component={RouterLink} to={`/${city.url}`} onClick={() => handleCitySelection(city.url)} >
               <CitySelectionButton onClick={handleClose} text={city.title} />  
             </Link>
           </Grid>

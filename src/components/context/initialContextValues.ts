@@ -1,10 +1,11 @@
 export interface ContextType {
   data: any;
   routes: {topLevel: string; level2: string; level3: string};
+  city: string | null;
   districts: string[];
   baseUrl: string;
   completeURL: string;
-  status: boolean
+  status: boolean;
 }
 
 let initialContextValues = {
@@ -14,7 +15,7 @@ let initialContextValues = {
   city : "",
   baseUrl : "https://api.divar.ir/v8/web-search",
   completeURL : "",
-  status: false
+  status: false,
 }
 
 export default initialContextValues

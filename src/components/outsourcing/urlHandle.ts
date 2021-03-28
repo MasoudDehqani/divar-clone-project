@@ -6,7 +6,7 @@ export interface AllQueriesType {
 const urlHandle = (
   baseUrl: string, 
   pathname: string,
-  city: string,
+  city: string | null,
   ) => {
 
   let completeURL: string = baseUrl

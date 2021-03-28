@@ -42,10 +42,13 @@ const CitySelectionModal = ({ modalOpen, setModalOpen } : {modalOpen: boolean, s
     setModalOpen(false);
   };
 
+  const handleCitySelection = (cityUrl: string) => {
+    localStorage.setItem("city", cityUrl)
+  }
+
   return (
     <div>
       <Modal
-      // disablePortal={true}
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         className={classes.modal}
@@ -82,7 +85,7 @@ const CitySelectionModal = ({ modalOpen, setModalOpen } : {modalOpen: boolean, s
             <Grid container spacing={2}>
               {allCities.topCities.map((city: any) => 
                 <Grid item>
-                  <Link component={RouterLink} to={`/${city.url}`}>
+                  <Link component={RouterLink} to={`/${city.url}`} onClick={() => handleCitySelection(city.url)}>
                     <CitySelectionButton onClick={handleClose} text={city.title} />  
                   </Link>
                 </Grid>

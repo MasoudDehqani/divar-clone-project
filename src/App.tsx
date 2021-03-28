@@ -11,6 +11,8 @@ const theme = createMuiTheme({
   direction: 'rtl',
 });
 
+console.log("App")
+
 function App() {
   return (
     <Router>
