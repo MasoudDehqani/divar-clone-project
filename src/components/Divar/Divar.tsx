@@ -9,15 +9,14 @@ function Divar() {
   
   const { status, city } = useContext(DivarContext)
 
+  if (!city) {
+    return <CitySelectionPage />
+  }
   
   if (!status) {
     return <h1>مالیدی</h1>
   }
   
-  console.log(city)
-  if (!city) {
-    return <CitySelectionPage />
-  }
 
 
   return (

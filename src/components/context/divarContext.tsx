@@ -15,6 +15,7 @@ const DivarContextProvider = ({ children } : { children: React.ReactChild }) => 
   console.log(city)
 
   const { data, status, routes, districts, completeURL } = usePathname(initialContextValues.baseUrl, pathname, city)
+  console.log(completeURL)
   
   console.log(data)
   console.log(status);

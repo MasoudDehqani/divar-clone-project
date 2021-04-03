@@ -23,9 +23,11 @@ const usePathname = (baseUrl: string, pathname: string, city: string | null) => 
       setStatus(false)
       return
     }
+
     setRequiredData(response, routes, districts, response.seo_details.bread_crumbs[response.seo_details.bread_crumbs.length - 2].url)
     
     setData(response)
+    setStatus(true)
     
 
   }, [completeURL, routes, districts])
