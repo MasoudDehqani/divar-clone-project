@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { Box, List } from "@material-ui/core";
-import { DivarContext } from "../context/divarContext";
+import { useDivarContext } from "../context/divarContext";
 import Level3Sidebar from "./Level3Sidebar";
 import SideItem from "./SideItem";
 import { useParams } from "react-router";
+import { v4 as uuidv4 } from "uuid";
 
 interface SubCategoriesType {
   subCategoryRoute: string;
@@ -13,11 +14,8 @@ interface SubCategoriesType {
 
 const Level2Sidebar = ({ subCategories } : { subCategories?: SubCategoriesType[] }) => {
 
-  const { routes } = useContext(DivarContext);
-  //@ts-ignore
-  const {city} = useParams()
-  console.log(city);
-  
+  const { routes } = useDivarContext();
+  const {city} = useParams<{city: string}>()  
 
   return (
     <List>
@@ -26,9 +24,8 @@ const Level2Sidebar = ({ subCategories } : { subCategories?: SubCategoriesType[]
         subCategories.map(({ subCategoryRoute, subCategoryText, level2SubCategories }, index) => {
           if (subCategoryRoute === routes.level2) {
             return (
-              <>
+              <div key={subCategoryRoute}>
                 <SideItem
-                  key={index}
                   onClick={() => { routes.level2 = subCategoryRoute }}
                   linkToGo={`/${city}/${subCategoryRoute}`}
                   text={subCategoryText}
@@ -37,17 +34,17 @@ const Level2Sidebar = ({ subCategories } : { subCategories?: SubCategoriesType[]
 
                 <Level3Sidebar level2Subcategories={level2SubCategories} />
 
-              </>
+              </div>
             );
           }
 
           if (!routes.level2) {
             return (
               <SideItem
-                  key={index}
-                  onClick={() => { routes.level2 = subCategoryRoute }}
-                  linkToGo={`/${city}/${subCategoryRoute}`}
-                  text={subCategoryText}
+                key={subCategoryRoute}
+                onClick={() => { routes.level2 = subCategoryRoute }}
+                linkToGo={`/${city}/${subCategoryRoute}`}
+                text={subCategoryText}
               />
             );
           }

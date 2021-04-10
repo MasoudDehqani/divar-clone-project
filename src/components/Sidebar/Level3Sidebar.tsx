@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
-import { DivarContext } from "../context/divarContext";
+import { useDivarContext } from "../context/divarContext";
 import { Box } from "@material-ui/core";
 import SideItem from "./SideItem";
 import { useParams } from "react-router";
+import { v4 as uuidv4 } from "uuid";
 
 interface PropsType {
   subcategoryRoute: string;
@@ -10,10 +11,8 @@ interface PropsType {
 }
 
 const Level3Sidebar = ({level2Subcategories} : {level2Subcategories?: PropsType[]}) => {
-  const { routes } = useContext(DivarContext);
-  //@ts-ignore
-  const {city} = useParams()
-  console.log(city);
+  const { routes } = useDivarContext();
+  const {city} = useParams<{city: string}>()
 
   return (
     <Box ml={4} >
@@ -21,7 +20,7 @@ const Level3Sidebar = ({level2Subcategories} : {level2Subcategories?: PropsType[
       level2Subcategories.map(({ subcategoryRoute, subcategoryText }) => {
         return (
           <SideItem
-            key={subcategoryText}
+            key={subcategoryRoute}
             onClick={() => { routes.level3 = subcategoryRoute }}
             linkToGo={`/${city}/${subcategoryRoute}`}
             text={subcategoryText}

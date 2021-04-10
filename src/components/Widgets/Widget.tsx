@@ -2,8 +2,9 @@ import React from 'react'
 import { Box, Container } from '@material-ui/core'
 import ChatOutlined from "@material-ui/icons/ChatOutlined"
 
-function Widget({widgetData} : {widgetData: any}) {
+function Widget({widgetData, lastElementRef} : {widgetData: any; lastElementRef?: any}) {
   return (
+    <div ref={lastElementRef}>
       <Box p={1} display="flex" justifyContent="space-between" alignItems="center" style={{width: "350px", height: "180px", border: "1px solid rgba(0,0,0,0.2)", borderRadius: "6px", padding: "0 10px"}}>
         <Box style={{height: "150px"}} width="190px" display="flex" flexDirection="column" justifyContent="space-between" >
           <span style={{fontWeight: 900}}>{widgetData.title}</span>
@@ -18,6 +19,7 @@ function Widget({widgetData} : {widgetData: any}) {
         </Box>
         <div style={{ width:'150px', height: '150px', backgroundImage: `url(${widgetData.image})`, backgroundSize: "cover", borderRadius: "6px" }}></div>
       </Box>
+    </div>
   )
 }
 

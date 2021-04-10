@@ -3,7 +3,7 @@ import Chip from '@material-ui/core/Chip';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import { DivarContext } from '../../context/divarContext';
+import { useDivarContext } from '../../context/divarContext';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 
 const FilterSelect = () => {
   const classes = useStyles();
-  const { routes, data, districts } = useContext(DivarContext);
+  const { routes, data, districts } = useDivarContext();
 
   return (
     <div className={classes.root}>

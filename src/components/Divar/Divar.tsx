@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 import Navbar from "../Navbar/Navbar"
 import { Redirect, Route, Switch } from "react-router-dom"
-import { DivarContext } from "../context/divarContext"
+import { DivarContext, useDivarContext } from "../context/divarContext"
 import CitySelectionPage from '../CitySelection/CitySelectionPage'
 import Main from '../Main/Main'
 
 function Divar() {
   
-  const { status, city } = useContext(DivarContext)
+  const { status, city } = useDivarContext()
 
   if (!city) {
     return <CitySelectionPage />

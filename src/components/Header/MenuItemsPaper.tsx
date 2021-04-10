@@ -5,6 +5,7 @@ import { Box, Link, makeStyles } from '@material-ui/core'
 import ArrowLeft from "@material-ui/icons/ArrowLeft"
 import {Link as RouterLink, useParams} from "react-router-dom"
 import MenuItemsLevel2 from './MenuItemsLevel2'
+import { v4 as uuidv4 } from 'uuid';
 
 const useStyle = makeStyles({
   root: {
@@ -16,9 +17,7 @@ const useStyle = makeStyles({
 
 function MenuItemsPaper() {
 
-  //@ts-ignore
-  const {city} = useParams()
-  console.log(city);
+  const {city} = useParams<{city: string}>()
 
   const [menuItemOpen, setMenuItemOpen] = useState({
     id: 0,
@@ -34,7 +33,7 @@ function MenuItemsPaper() {
         <span onMouseOver={() => setMenuItemOpen({id: -1, isOpen: false})} style={{marginBottom: "10px"}}>همه آگهی‌ها</span>  
       </Link>
       {allCategories.children.map((category =>
-          <Link color="textPrimary" component={RouterLink} underline="none" to={`/${city}/${category.slug}`}>
+          <Link key={category.id} color="textPrimary" component={RouterLink} underline="none" to={`/${city}/${category.slug}`}>
             <Box onClick={() => setMenuItemOpen({id: -1, isOpen: false})} onMouseOver={() => setMenuItemOpen({id: category.id, isOpen: true})} className={classes.root} py={1} display="flex" justifyContent="space-between" alignItems="center" style={{cursor: "pointer"}}>
               <span>{category.name}</span>
               <ArrowLeft />
@@ -45,7 +44,7 @@ function MenuItemsPaper() {
     <Paper style={{padding: "10px", display: !menuItemOpen.isOpen ? "none" : "flex", width: "550px", flexDirection: "column", flexWrap: 'wrap', fontSize: "0.9rem"}}>
     {allCategories.children.map(category => {
       if (category.id === menuItemOpen.id) {
-        return <MenuItemsLevel2 itemsToRender={category.children} />
+        return <MenuItemsLevel2 key={category.id} itemsToRender={category.children} />
       }
       return undefined
     }

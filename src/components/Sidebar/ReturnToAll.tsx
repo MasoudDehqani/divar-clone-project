@@ -1,14 +1,12 @@
 import React, { useContext } from "react";
 import SideItem from "./SideItem";
-import { DivarContext } from "../context/divarContext";
+import { useDivarContext } from "../context/divarContext";
 import ArrowRight from "@material-ui/icons/ArrowRightAlt";
 import { useParams } from "react-router";
 
 const ReturnToAll = () => {
-  const context = useContext(DivarContext);
-  //@ts-ignore
-  const {city} = useParams()
-  console.log(city);
+  const context = useDivarContext();
+  const {city} = useParams<{city: string}>()
 
   return (
     <SideItem

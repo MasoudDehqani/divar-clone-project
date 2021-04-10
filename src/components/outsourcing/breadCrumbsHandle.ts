@@ -1,5 +1,5 @@
 
-const setRequiredData = (response: any, routes: any, districts: any, city: string) => {
+const breadCrumbsHandle = (response: any, routes: any, districts: any, city: string) => {
   if (!response || !city) return
   const levels: string[] = []
   
@@ -13,4 +13,4 @@ const setRequiredData = (response: any, routes: any, districts: any, city: strin
   // districts = response.schema.json_schema.properties.districts.properties.vacancies.items.enumNames
 }
 
-export default setRequiredData;
+export default breadCrumbsHandle;

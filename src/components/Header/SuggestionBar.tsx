@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
-import { DivarContext } from '../context/divarContext'
+import { DivarContext, useDivarContext } from '../context/divarContext'
 import SuggestionButton from './SuggestionButton'
 
 const SuggestionBar = () => {
 
-  const { data } = useContext(DivarContext)
+  const { data } = useDivarContext()
 
   return (
     <div style={{margin: "10px 0"}}>

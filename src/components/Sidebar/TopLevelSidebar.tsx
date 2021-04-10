@@ -1,33 +1,27 @@
-import React, { useContext } from "react";
+import React from "react";
 import { List } from "@material-ui/core";
-// import { useRouteMatch } from "react-router-dom"
 import SideItem from "./SideItem";
-import { DivarContext } from "../context/divarContext";
+import { useDivarContext } from "../context/divarContext";
 import { topLevelRoutesTitlesIcons } from "./dataStructured";
 import Level2Sidebar from "./Level2Sidebar";
 import ReturnToAll from "./ReturnToAll";
-import { usePagination } from "@material-ui/lab";
 import { useParams } from "react-router";
+import { v4 as uuidv4 } from "uuid";
 
 const TopLevelSidebar = () => {
 
-  const { routes } = useContext(DivarContext);
-  //@ts-ignore
-  const {city} = useParams()
-  console.log(city);
+  const { routes } = useDivarContext();
+  const {city} = useParams<{city: string}>()
   
 
   return (
     <List>
+      {routes.topLevel && <ReturnToAll />}
       {topLevelRoutesTitlesIcons.map(({ route, text, icon, subCategories }, index) => {
         if (route === routes.topLevel) {
           return (
-            <>
-            
-              <ReturnToAll />
-
+            <div key={route}>
               <SideItem
-                key={index}
                 onClick={() => {
                   routes.topLevel = route;
                   routes.level2 = "";
@@ -40,15 +34,14 @@ const TopLevelSidebar = () => {
               />
 
               <Level2Sidebar subCategories={subCategories} />
-
-            </>
+            </div>
           );
         }
 
         if (!routes.topLevel) {
           return (
             <SideItem
-              key={index}
+              key={route}
               onClick={() => {
                 routes.topLevel = route;
                 routes.level2 = "";

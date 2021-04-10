@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react"
 import urlHandle from "../outsourcing/urlHandle"
 import fetchHandle from "../outsourcing/fetchHandle"
-import setRequiredData from "../outsourcing/setRequiredData"
+import breadCrumbsHandle from "../outsourcing/breadCrumbsHandle"
 import useQueries from "./useQueries"
 
 const usePathname = (baseUrl: string, pathname: string, city: string | null) => {
@@ -15,7 +15,7 @@ const usePathname = (baseUrl: string, pathname: string, city: string | null) => 
   let routes = useMemo(() => ({topLevel: "", level2: "", level3: ""}), [])
   let districts: string[] = useMemo(() => [], [])
   
-  const getSetData = useCallback(async () => {
+  const fetchSetData = useCallback(async () => {
 
     const response = await fetchHandle(completeURL)
 
@@ -24,7 +24,7 @@ const usePathname = (baseUrl: string, pathname: string, city: string | null) => 
       return
     }
 
-    setRequiredData(response, routes, districts, response.seo_details.bread_crumbs[response.seo_details.bread_crumbs.length - 2].url)
+    breadCrumbsHandle(response, routes, districts, response.seo_details.bread_crumbs[response.seo_details.bread_crumbs.length - 2].url)
     
     setData(response)
     setStatus(true)
@@ -33,10 +33,10 @@ const usePathname = (baseUrl: string, pathname: string, city: string | null) => 
   }, [completeURL, routes, districts])
   
   useEffect( () => {
-    getSetData()
-  }, [getSetData, url])
+    fetchSetData()
+  }, [fetchSetData, completeURL])
 
-  return { data, routes, districts, completeURL, status }
+  return { data, setData, routes, districts, completeURL, status }
 }
 
 

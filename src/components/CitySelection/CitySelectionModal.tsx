@@ -10,6 +10,7 @@ import { allCities } from "../Sidebar/dataStructured"
 import CitySelectionButton from '../CitySelection/CitySelectionButton';
 import Link from "@material-ui/core/Link"
 import {Link as RouterLink} from "react-router-dom"
+import { v4 as uuidv4 } from 'uuid';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -84,7 +85,7 @@ const CitySelectionModal = ({ modalOpen, setModalOpen } : {modalOpen: boolean, s
             <h3>شهرهای پر بازدید</h3>
             <Grid container spacing={2}>
               {allCities.topCities.map((city: any) => 
-                <Grid item>
+                <Grid key={uuidv4()} item>
                   <Link component={RouterLink} to={`/${city.url}`} onClick={() => handleCitySelection(city.url)}>
                     <CitySelectionButton onClick={handleClose} text={city.title} />  
                   </Link>

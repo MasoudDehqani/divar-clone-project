@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import { Button } from '@material-ui/core'
 import { LocationOnRounded } from '@material-ui/icons'
-import { DivarContext } from '../context/divarContext'
+import { useDivarContext } from '../context/divarContext'
 
 const CitySelectionButton = ({onClick} : {onClick: React.MouseEventHandler<HTMLButtonElement>}) => {
 
-  const {data} = useContext(DivarContext)
+  const {data} = useDivarContext()
 
   return (
     <Button onClick={onClick}>

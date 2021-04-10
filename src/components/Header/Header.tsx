@@ -8,14 +8,20 @@ import MenuItemsPaper from './MenuItemsPaper';
 import SuggestionBar from './SuggestionBar';
 import { useHistory, useLocation } from 'react-router';
 import useQuery from "../Hooks/useQuery"
-import { DivarContext } from '../context/divarContext';
+import { DivarContext, useDivarContext } from '../context/divarContext';
 
 const useStyles = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(1),
     height: 40,
-    width: 200
+    width: 200,
+    fontFamily: "Vazir"
   },
+  root: {
+    "& > *": {
+      fontFamily: "Vazir"
+    }
+  }
 }));
 
 export const Header = () => {
@@ -25,10 +31,10 @@ export const Header = () => {
   const query = useQuery()
 
   const [menuOpen, setMenuOpen] = useState(false)
-  const [textFieldValue, setTextFieldValue] = useState(query.get("q"))
+  const [textFieldValue, setTextFieldValue] = useState(!query.get("q") ? "" : query.get("q"))
   const [registeredTextFieldValue, setRegisteredTextFieldValue] = useState('')
 
-  const { data } = useContext(DivarContext)
+  const { data } = useDivarContext()
 
   function handleKeyPress(e: React.KeyboardEvent<HTMLDivElement>) {
     if (e.key === "Enter") {
@@ -63,7 +69,7 @@ export const Header = () => {
         >
           {data.title}
         </Button>
-        <TextField onKeyDown={(e) => handleKeyPress(e)} value={textFieldValue} placeholder={`جستجو در ${data?.title}`} onChange={(e) => setTextFieldValue(e.target.value)} style={{width: "500px", fontFamily: "Vazir"}} id="outlined-basic" variant="outlined" />
+        <TextField className={classes.root}  onKeyDown={(e) => handleKeyPress(e)} value={textFieldValue} placeholder={`جستجو در ${!data.title ? "" : data.title}`} onChange={(e) => setTextFieldValue(e.target.value)} style={{width: "500px", fontFamily: "Vazir"}} id="outlined-basic" variant="outlined" />
         {menuOpen && 
           <ClickAwayListener onClickAway={() => setMenuOpen(false)}>
             <div onClick={() => setMenuOpen(false)}>

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Button from "@material-ui/core/Button"
 import Link from "@material-ui/core/Link"
 import { Link as RouterLink, useParams } from "react-router-dom"
@@ -7,7 +7,6 @@ import { suggestionBarUrl } from "../Sidebar/dataStructured"
 function SuggestionButton({text, categoryName, index} : {text: string, categoryName: string; index: number}) {
 
   const {city} = useParams<{city: string, category: string}>()
-  console.log(city);
 
   return (
     <Link underline="none" component={RouterLink} to={`/${city}/${suggestionBarUrl[index]}`}>

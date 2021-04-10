@@ -6,6 +6,7 @@ export interface ContextType {
   baseUrl: string;
   completeURL: string;
   status: boolean;
+  setData: React.Dispatch<React.SetStateAction<{}>>
 }
 
 let initialContextValues = {
@@ -16,6 +17,7 @@ let initialContextValues = {
   baseUrl : "https://api.divar.ir/v8/web-search",
   completeURL : "",
   status: false,
+  setData: () => {}
 }
 
 export default initialContextValues
