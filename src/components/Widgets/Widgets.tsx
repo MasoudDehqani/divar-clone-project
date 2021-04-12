@@ -8,10 +8,6 @@ const Widgets = () => {
 
   const { data, setData, completeURL } = useDivarContext()
   let observer = useRef(null)
-  // const [page, setPage] = useState(!data.seo_details?.next[data?.seo_details?.next.length - 1] ? "" : data.seo_details?.next[data?.seo_details?.next.length - 1])
-
-  // console.log(data.seo_details?.next[data?.seo_details?.next.length - 1]);
-
   let nextPageNumber = data.seo_details?.next[data?.seo_details?.next.length - 1]
   
 
@@ -22,14 +18,9 @@ const Widgets = () => {
     observer.current = new IntersectionObserver( ([entry]) => {
       if (entry.isIntersecting) {
         const getData = async () => {
-          const response = await ((await fetch(`${completeURL}${completeURL.includes("?") ? `&page=${nextPageNumber}` : `?page=${nextPageNumber}`}`)).json())
-          console.log(response);
-          
+          const response = await ((await fetch(`${completeURL}${completeURL.includes("?") ? `&page=${nextPageNumber}` : `?page=${nextPageNumber}`}`)).json())          
           //@ts-ignore
           setData( prev => ({...prev, widget_list: prev.widget_list.concat(response.widget_list)}))
-          // setPage((prev: string) => +prev + 1)
-          // console.log(page);
-          
         }
         getData()
       }
@@ -48,7 +39,7 @@ const Widgets = () => {
         if (data.widget_list.length === index + 1) {
           return(
             <Grid key={index} item>
-              <Widget lastElementRef={lastWidgetRef} widgetData={widget.data} />
+              <Widget ref={lastWidgetRef} widgetData={widget.data} />
             </Grid>
           )
         }
@@ -59,19 +50,8 @@ const Widgets = () => {
         )
       }
       )}
-      {/* <ScrolledWidgets /> */}
     </Grid>
   )
 }
 
 export default Widgets
-
-// const getData = async () => {
-//   const response = await ((await fetch(`${completeURL}${completeURL.includes("?") ? `&page=${page}` : `?page=${page}`}`)).json())
-//   console.log(response);
-  
-//   //@ts-ignore
-//   setData( prev => ({...prev, widget_list: prev.widget_list.concat(response.widget_list)}))
-//   setPage(response.seo_details?.next[response?.seo_details?.next.length - 1])
-// }
-// getData()

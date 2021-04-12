@@ -14,7 +14,7 @@ function Divar() {
   }
   
   if (!status) {
-    return <h1>مالیدی</h1>
+    return <h1>Not Found</h1>
   }
   
 

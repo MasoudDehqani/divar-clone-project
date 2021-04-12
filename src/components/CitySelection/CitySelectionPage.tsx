@@ -26,10 +26,8 @@ const CitySelectionPage = () => {
       <h3>شهرهای پر بازدید</h3>
       <Grid container spacing={2}>
         {allCities.topCities.map((city: any) => 
-          <Grid item>
-            <Link component={RouterLink} to={`/${city.url}`} onClick={() => handleCitySelection(city.url)} >
-              <CitySelectionButton onClick={handleClose} text={city.title} />  
-            </Link>
+          <Grid item onClick={() => handleCitySelection(city.url)}>
+            <CitySelectionButton to={`/${city.url}`} onClick={handleClose} text={city.title} />  
           </Grid>
         )}
 
