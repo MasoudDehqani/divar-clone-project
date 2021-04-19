@@ -4,7 +4,6 @@ import { useDivarContext } from "../context/divarContext";
 import Level3Sidebar from "./Level3Sidebar";
 import SideItem from "./SideItem";
 import { useParams } from "react-router";
-import { v4 as uuidv4 } from "uuid";
 
 interface SubCategoriesType {
   subCategoryRoute: string;

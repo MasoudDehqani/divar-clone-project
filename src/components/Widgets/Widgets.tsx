@@ -2,7 +2,6 @@ import { Grid } from '@material-ui/core'
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useDivarContext } from '../context/divarContext'
 import Widget from './Widget'
-import { v4 as uuidv4 } from 'uuid';
 
 const Widgets = () => {
 

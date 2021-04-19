@@ -6,7 +6,6 @@ import { topLevelRoutesTitlesIcons } from "./dataStructured";
 import Level2Sidebar from "./Level2Sidebar";
 import ReturnToAll from "./ReturnToAll";
 import { useParams } from "react-router";
-import { v4 as uuidv4 } from "uuid";
 
 const TopLevelSidebar = () => {
 

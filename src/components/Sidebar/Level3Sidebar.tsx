@@ -1,9 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useDivarContext } from "../context/divarContext";
 import { Box } from "@material-ui/core";
 import SideItem from "./SideItem";
 import { useParams } from "react-router";
-import { v4 as uuidv4 } from "uuid";
 
 interface PropsType {
   subcategoryRoute: string;

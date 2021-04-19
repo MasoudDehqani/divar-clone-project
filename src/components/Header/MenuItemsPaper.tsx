@@ -1,11 +1,10 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import Paper from "@material-ui/core/Paper"
 import { allCategories } from "../Sidebar/dataStructured"
 import { Box, Link, makeStyles } from '@material-ui/core'
 import ArrowLeft from "@material-ui/icons/ArrowLeft"
 import {Link as RouterLink, useParams} from "react-router-dom"
 import MenuItemsLevel2 from './MenuItemsLevel2'
-import { v4 as uuidv4 } from 'uuid';
 
 const useStyle = makeStyles({
   root: {

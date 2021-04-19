@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useReducer } from 'react'
-import { contextType } from 'react-infinite-scroller'
 import { useLocation, useRouteMatch } from "react-router-dom"
 import usePathname from '../Hooks/usePathname'
 import initialContextValues, {ContextType} from "./initialContextValues"

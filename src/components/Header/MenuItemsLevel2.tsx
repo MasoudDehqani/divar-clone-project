@@ -1,7 +1,6 @@
 import React from 'react'
 import { Box, Link } from '@material-ui/core'
 import { Link as RouterLink, useParams } from "react-router-dom"
-import { v4 as uuidv4 } from 'uuid';
 
 function MenuItemsLevel2({itemsToRender} : {itemsToRender: any}) {
 
